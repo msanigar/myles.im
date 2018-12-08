@@ -1,4 +1,4 @@
-import { SET_DATA } from "./actionTypes";
+import { SET_DATA, TEST_ACTION } from "./actionTypes";
 import { initialState } from "./store.js";
 
 export const reducer = (state = initialState, action) => {
@@ -7,6 +7,11 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         data: action.data
+      };
+      case TEST_ACTION:
+      return {
+        ...state,
+        test: true
       };
     default:
       return state;

@@ -20,19 +20,19 @@ class Page extends Component {
   }
 
   render () {
-    const { test2 } = this.props
+    const { test } = this.props
     return (
       <div>
       <Head />
-        <p>Redux Store Count: <span>{test2}</span></p>
+        <p>Test action works?: <span>{test ? 'yes' : 'no'}</span></p>
       </div>
     )
   }
 }
 
 function mapStateToProps (state) {
-  const {test, test2} = state
-  return {test, test2}
+  const {test} = state
+  return {test}
 }
 
 export default connect(mapStateToProps)(Page)

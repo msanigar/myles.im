@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SET_DATA } from './actionTypes'
+import { SET_DATA, TEST_ACTION } from './actionTypes'
 
 export function getData() {
   return dispatch =>
@@ -12,3 +12,6 @@ export function getData() {
     });
 }
 
+export function testAction() {
+  return dispatch => dispatch({ type: TEST_ACTION })
+}
