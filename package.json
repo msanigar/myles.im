@@ -2,9 +2,9 @@
   "name": "myles.im",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next",
+    "dev": "next -- -p 4000",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -- -p 4000"
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",

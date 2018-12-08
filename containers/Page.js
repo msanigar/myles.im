@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { testAction } from '../redux/actions.js'
 import Head from '../components/Head/'
