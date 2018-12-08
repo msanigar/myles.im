@@ -1,0 +1,22 @@
+@import './vars';
+
+:global {
+
+  html {
+    overflow-y: scroll;
+  }
+
+  * {
+    box-sizing: border-box;
+
+    &:before,
+    &:after {
+      box-sizing: border-box;
+    }
+  }
+
+  body {
+      padding: 1rem;
+      border: 1px solid $red;
+    }
+}
