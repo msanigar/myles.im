@@ -24,7 +24,7 @@ class Page extends Component {
     return (
       <div>
       <Head />
-        <p>Test action works?: <span>{test ? 'yes' : 'no'}</span></p>
+        <p>{test ? 'built by myles.' : ''}</p>
       </div>
     )
   }
