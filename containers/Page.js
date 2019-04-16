@@ -24,7 +24,7 @@ class Page extends Component {
     return (
       <div>
       <Head />
-        <p>{test ? 'built by myles.' : ''}</p>
+        <p>{test ? '' : ''}</p>
       </div>
     )
   }
