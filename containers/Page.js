@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { testAction } from '../redux/actions.js'
+import { bindActionCreators } from 'redux'
+import { setDarkModeAction } from '../redux/actions.js'
 import Head from '../components/Head/'
 
 class Page extends Component {
@@ -9,30 +10,32 @@ class Page extends Component {
     super(props);
   }
 
-  test = () => {
-    const {dispatch} = this.props
-    dispatch(testAction())
+  triggerToggleDarkMode = () => {
+    const { setDarkModeAction } = this.props
+    setDarkModeAction()
   }
 
-  componentDidMount = () => {
-      const {dispatch} = this.props
-      dispatch(testAction())
-  }
-
-  render () {
-    const { test } = this.props
+  render() {
+    const { darkmode } = this.props;
     return (
-      <div>
-      <Head />
-        <p>{test ? '' : ''}</p>
+      <div style={{backgroundColor: darkmode ? `#d7d7d7` : `#f7f7f7`}}>
+        <Head />
+        <a onClick={() => this.triggerToggleDarkMode()}>enable dark mode</a>
+        <p>{darkmode ? `ya boi dark mode` : ``}</p>
       </div>
     )
   }
 }
 
-function mapStateToProps (state) {
-  const {test} = state
-  return {test}
+const mapStateToProps = state => {
+  const { darkmode } = state
+  return { darkmode }
 }
 
-export default connect(mapStateToProps)(Page)
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ setDarkModeAction }, dispatch)
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Page)

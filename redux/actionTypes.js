@@ -1,2 +1,2 @@
 export const SET_DATA = 'SET_DATA'
-export const TEST_ACTION = 'TEST_ACTION'
+export const SET_DARKMODE = 'SET_DARKMODE'

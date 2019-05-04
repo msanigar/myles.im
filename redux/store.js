@@ -5,7 +5,7 @@ import { reducer } from './reducers.js'
 
 export const initialState = {
   data: {},
-  test: false
+  darkmode: false
 }
 
 export function initializeStore (initialState = initialState) {

@@ -1,6 +1,5 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {getData, testAction} from '../redux/actions.js'
+import {getDataAction, setDarkModeAction} from '../redux/actions.js'
 import Page from '../containers/Page'
 
 import '../styles/global.scss'
@@ -8,12 +7,12 @@ import '../styles/global.scss'
 class Index extends React.Component {
   static getInitialProps ({ reduxStore, req }) {
     const isServer = !!req
-    return reduxStore.dispatch(getData(isServer))
+    return reduxStore.dispatch(getDataAction(isServer))
   }
 
   componentDidMount () {
     const {dispatch} = this.props
-    this.incremement = testAction(dispatch)
+    this.incremement = setDarkModeAction(dispatch)
   }
 
   render () {
@@ -23,4 +22,4 @@ class Index extends React.Component {
   }
 }
 
-export default connect()(Index)
+export default Index

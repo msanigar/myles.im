@@ -1,7 +1,7 @@
 import axios from "axios";
-import { SET_DATA, TEST_ACTION } from './actionTypes'
+import { SET_DATA, SET_DARKMODE } from './actionTypes'
 
-export function getData() {
+export function getDataAction() {
   return dispatch =>
     axios({
       method: 'GET',
@@ -12,6 +12,6 @@ export function getData() {
     });
 }
 
-export function testAction() {
-  return dispatch => dispatch({ type: TEST_ACTION })
+export function setDarkModeAction() {
+  return { type: SET_DARKMODE };
 }
