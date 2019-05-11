@@ -2,11 +2,29 @@
 
 .container {
     margin: 0 auto;
-    background: $grad1;
+    background: 
+    linear-gradient($orangeOpacity, $yellowOpacity),
+    url('../../images/bg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    max-height: 1080px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    h1 {
+      color: $white;
+
+
+      span {
+        font-weight: 700;
+        text-decoration: underline;
+      }
+    }
 }
 
-.logo {
-  height: 100px;
-  width: 100px;
-  margin: 1em;
-}
