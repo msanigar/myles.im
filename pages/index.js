@@ -5,12 +5,12 @@ import Page from '../containers/Page'
 import '../styles/global.scss'
 
 class Index extends React.Component {
-  static getInitialProps ({ reduxStore, req }) {
+  static getInitialProps({ reduxStore, req }) {
     const isServer = !!req
     return reduxStore.dispatch(getDataAction(isServer))
   }
 
-  render () {
+  render() {
     return (
       <Page />
     )
