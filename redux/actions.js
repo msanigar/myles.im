@@ -1,17 +1,18 @@
 import axios from "axios";
-import { SET_DATA, SET_DARKMODE } from './actionTypes'
+import { SET_DATA } from './actionTypes'
 
 export function getDataAction() {
   return dispatch =>
     axios({
       method: 'GET',
-      url: 'https://api.myles.im/wp-json/wp/v2/pages'
+      url: 'https://api.myles.im/wp-json/wp/v2/posts?slug=main'
     }).then(resp => {
-      let data = resp.data;
+      let wpData = resp.data[0]
+      let data = {
+        ...data,
+        main: wpData.acf.main
+      };
+
       return dispatch({ type: SET_DATA, data });
     });
-}
-
-export function setDarkModeAction() {
-  return { type: SET_DARKMODE };
 }

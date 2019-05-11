@@ -1,4 +1,4 @@
-import { SET_DATA, SET_DARKMODE } from "./actionTypes";
+import { SET_DATA } from "./actionTypes";
 import { initialState } from "./store.js";
 
 export const reducer = (state = initialState, action) => {
@@ -7,11 +7,6 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         data: action.data
-      };
-    case SET_DARKMODE:
-      return {
-        ...state,
-        darkmode: !state.darkmode
       };
     default:
       return state;

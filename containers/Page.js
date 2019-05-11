@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { setDarkModeAction } from '../redux/actions.js'
 import Head from '../components/Head/'
+import TopBody from '../components/TopBody/'
 
 class Page extends Component {
 
@@ -10,32 +9,26 @@ class Page extends Component {
     super(props);
   }
 
-  triggerToggleDarkMode = () => {
-    const { setDarkModeAction } = this.props
-    setDarkModeAction()
-  }
-
   render() {
-    const { darkmode } = this.props;
+
+    const { main } = this.props.data
+
     return (
-      <div style={{backgroundColor: darkmode ? `#d7d7d7` : `#f7f7f7`}}>
-        <Head />
-        <a onClick={() => this.triggerToggleDarkMode()}>enable dark mode</a>
-        <p>{darkmode ? `ya boi dark mode` : ``}</p>
+      <div>
+        <Head>
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+        </Head>
+        <TopBody main={main} />
       </div>
     )
   }
 }
 
 const mapStateToProps = state => {
-  const { darkmode } = state
-  return { darkmode }
+  const { data } = state
+  return { data }
 }
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ setDarkModeAction }, dispatch)
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(Page)

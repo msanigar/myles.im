@@ -4,8 +4,7 @@ import thunkMiddleware from 'redux-thunk'
 import { reducer } from './reducers.js'
 
 export const initialState = {
-  data: {},
-  darkmode: false
+  data: {}
 }
 
 export function initializeStore (initialState = initialState) {
