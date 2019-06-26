@@ -10,7 +10,7 @@ export function getDataAction() {
       let wpData = resp.data[0]
       let data = {
         ...data,
-        main: wpData.acf.main
+        main: wpData.content.rendered
       };
 
       return dispatch({ type: SET_DATA, data });
