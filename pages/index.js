@@ -1,20 +1,28 @@
-import React from 'react'
-import { getDataAction } from '../redux/actions.js'
-import Page from '../containers/Page'
+import Head from 'next/head'
+import Copy from '../components/copy'
 
-import '../styles/global.scss'
+import css from './index.scss'
 
-class Index extends React.Component {
-  static getInitialProps({ reduxStore, req }) {
-    const isServer = !!req
-    return reduxStore.dispatch(getDataAction(isServer))
-  }
+import Vercel from '../svgs/vercel.svg'
 
-  render() {
-    return (
-      <Page />
-    )
-  }
+const { example } = css
+
+export default function Home() {
+  return (
+    <div>
+      <Head>
+        <title>myles.im</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <main>
+        <div className={example}>Hello World!</div>
+      </main>
+
+      <Copy />
+
+      <Vercel />
+
+    </div>
+  )
 }
-
-export default Index
