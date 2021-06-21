@@ -1,17 +1,3 @@
-# dependencies
-node_modules
-
-# next.js
-.next/
-out/
-
-# production
+.snowpack
 build
-
-# misc
-.DS_Store
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+node_modules
