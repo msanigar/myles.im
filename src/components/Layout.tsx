@@ -13,6 +13,7 @@ export default function Layout({ children }: Props) {
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="apple-touch-icon" href="/icon.png" />
         <meta name="theme-color" content="#fff" />
+        <script defer data-domain="myles.im" src="https://plausible.io/js/plausible.js"></script>
       </Head>
       <nav>
         <Navigation />
