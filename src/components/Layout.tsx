@@ -1,5 +1,5 @@
-import Head from "next/head";
-import Navigation from "./Navigation";
+import Head from 'next/head';
+import Navigation from './Navigation';
 
 type Props = {
   children: React.ReactNode;
@@ -13,7 +13,11 @@ export default function Layout({ children }: Props) {
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="apple-touch-icon" href="/icon.png" />
         <meta name="theme-color" content="#fff" />
-        <script defer data-domain="myles.im" src="https://plausible.io/js/plausible.js"></script>
+        <script
+          defer
+          data-domain="myles.im"
+          src="https://plausible.io/js/plausible.js"
+        ></script>
       </Head>
       <nav>
         <Navigation />

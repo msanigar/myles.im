@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { TagContent } from "../lib/tags";
+import Link from 'next/link';
+import { TagContent } from '../lib/tags';
 
 type Props = {
   tag: TagContent;
@@ -7,7 +7,7 @@ type Props = {
 export default function TagButton({ tag }: Props) {
   return (
     <>
-      <Link href={"/posts/tags/[[...slug]]"} as={`/posts/tags/${tag.slug}`}>
+      <Link href={'/posts/tags/[[...slug]]'} as={`/posts/tags/${tag.slug}`}>
         <a>{tag.name}</a>
       </Link>
       <style jsx>{`
