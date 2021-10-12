@@ -9,22 +9,17 @@ type Props = {
 export default function PostItem({ post }: Props) {
   return (
     <Link href={'/posts/' + post.slug}>
-      <a>
-        <Date date={parseISO(post.date)} />
-        <h2>{post.title}</h2>
-        <style jsx>
-          {`
-            a {
-              color: #222;
-              display: inline-block;
-            }
-            h2 {
-              margin: 0;
-              font-weight: 500;
-            }
-          `}
-        </style>
-      </a>
+      <div className="column is-one-third tile is-parent">
+        <article className="tile is-child notification is-info">
+          <p className="title">{post.title}</p>
+          <p className="subtitle">
+            <Date date={parseISO(post.date)} />
+          </p>
+          <figure className="image is-4by3">
+            <img src="https://bulma.io/images/placeholders/640x480.png" />
+          </figure>
+        </article>
+      </div>
     </Link>
   );
 }

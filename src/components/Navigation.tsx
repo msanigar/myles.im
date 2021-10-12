@@ -1,92 +1,86 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import Burger from './Burger';
 import { useState } from 'react';
+import classNames from 'classnames';
 
 export default function Navigation() {
-  const router = useRouter();
   const [active, setActive] = useState(false);
+  const burgerClasses = classNames({
+    'navbar-burger': true,
+    'is-active': active,
+  });
+  const navClasses = classNames({
+    'navbar-menu': true,
+    'is-active': active,
+  });
+
   return (
     <>
-      <Burger active={active} onClick={() => setActive(!active)} />
-      <div className={'container ' + (active ? 'active' : '')}>
-        <ul>
-          <li>
-            <Link href="/">
-              <a className={router.pathname === '/' ? 'active' : null}>about</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/posts">
-              <a
-                className={
-                  router.pathname.startsWith('/posts') ? 'active' : null
-                }
-              >
-                blog
-              </a>
-            </Link>
-          </li>
-        </ul>
-        <style jsx>
-          {`
-            .container {
-              width: 0;
-            }
-            ul {
-              opacity: 0;
-              width: 100%;
-              height: 100vh;
-              text-align: right;
-              list-style: none;
-              margin: 0;
-              padding: 0;
-              position: fixed;
-              top: 0;
-              background-color: #fff;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              z-index: 1;
-              transform: translateY(100%);
-              transition: opacity 200ms;
-            }
-            .active ul {
-              opacity: 1;
-              transform: translateY(0);
-            }
-            li {
-              margin-bottom: 1.75rem;
-              font-size: 2rem;
-              padding: 0 1.5rem 0 0;
-            }
-            li:last-child {
-              margin-bottom: 0;
-            }
-            .active {
-              color: #222;
-            }
+      <nav className="navbar" role="navigation" aria-label="main navigation">
+        <div className="navbar-brand">
+          <a className="navbar-item" href="https://bulma.io">
+            <img
+              src="https://bulma.io/images/bulma-logo.png"
+              width="112"
+              height="28"
+            />
+          </a>
 
-            @media (min-width: 769px) {
-              .container {
-                width: 7rem;
-                display: block;
-              }
-              ul {
-                opacity: 1;
-                width: 7rem;
-                top: auto;
-                display: block;
-                transform: translateY(0);
-              }
-              li {
-                font-size: 1rem;
-                padding: 0;
-              }
-            }
-          `}
-        </style>
-      </div>
+          <a
+            role="button"
+            onClick={() => setActive(!active)}
+            className={burgerClasses}
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarBasicExample"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="navbarBasicExample" className={navClasses}>
+          <div className="navbar-start">
+            <Link href="/">
+              <a className="navbar-item">Home</a>
+            </Link>
+            <Link href="/">
+              <a className="navbar-item">Documentation</a>
+            </Link>
+            <div className="navbar-item has-dropdown is-hoverable">
+              <Link href="/">
+                <a className="navbar-link">More</a>
+              </Link>
+              <div className="navbar-dropdown">
+                <Link href="/">
+                  <a className="navbar-item">home</a>
+                </Link>
+                <Link href="/">
+                  <a className="navbar-item">about</a>
+                </Link>
+                <Link href="/posts">
+                  <a className="navbar-item">blog</a>
+                </Link>
+                <hr className="navbar-divider" />
+                <Link href="/">
+                  <a className="navbar-item">Contact</a>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="navbar-end">
+            <div className="navbar-item">
+              <div className="buttons">
+                <a className="button is-primary">
+                  <strong>Sign up</strong>
+                </a>
+                <a className="button is-light">Log in</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </>
   );
 }
