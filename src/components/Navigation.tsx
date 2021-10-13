@@ -62,7 +62,7 @@ export default function Navigation() {
                   <a className="navbar-item">blog</a>
                 </Link>
                 <hr className="navbar-divider" />
-                <Link href="/">
+                <Link href="/contact">
                   <a className="navbar-item">Contact</a>
                 </Link>
               </div>

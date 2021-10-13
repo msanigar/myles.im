@@ -20,6 +20,10 @@ export default function Layout({ children }: Props) {
             data-domain="myles.im"
             src="https://plausible.io/js/plausible.js"
           ></script>
+          <script
+            src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+            crossOrigin="anonymous"
+          ></script>
         </Head>
         <Navigation />
         <main>{children}</main>

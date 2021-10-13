@@ -1,2 +1,7 @@
 @import '~bulma/bulma';
-@import './syntax.module.scss'
+@import './syntax.module.scss';
+
+.fa-dark {
+  color: black;
+  fill: black;
+}
