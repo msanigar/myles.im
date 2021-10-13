@@ -17,6 +17,12 @@ export default function PostList({ posts, tags, pagination }: Props) {
   return (
     <>
       <div className="container">
+        <section className="section">
+          <h1 className="title">Section</h1>
+          <h2 className="subtitle">
+            <strong>Netflify CMS</strong> blows my mind.
+          </h2>
+        </section>
         <div className="columns is-multiline is-mobile">
           {posts.map((it, i) => (
             <PostItem key={i} post={it} />

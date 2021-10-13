@@ -12,8 +12,8 @@ export default function Index() {
       <section className="hero is-success is-fullheight">
         <div className="hero-body">
           <div className="container has-text-centered">
-            <p className="title">Title</p>
-            <p className="subtitle">Subtitle</p>
+            <p className="title">myles.im ~ work in progress</p>
+            <p className="subtitle">this is my JAMstack playground..</p>
           </div>
         </div>
       </section>
