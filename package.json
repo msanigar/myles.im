@@ -9,6 +9,7 @@
     "export": "next build && next export -o ./dist"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@mapbox/rehype-prism": "^0.8.0",
     "@svgr/webpack": "^5.5.0",
     "@types/js-yaml": "^4.0.3",

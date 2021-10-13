@@ -1,9 +1,10 @@
 import 'normalize.css';
 import { AppProps } from 'next/app';
-// NOTE: Do not move the styles dir to the src.
-// They are used by the Netlify CMS preview feature.
-
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { config } from '@fortawesome/fontawesome-svg-core';
 import '../styles/global.scss';
+
+config.autoAddCss = false;
 
 export default function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
