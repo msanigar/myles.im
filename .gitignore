@@ -2,3 +2,4 @@
 .next/
 yarn.lock
 package-lock.json
+.dccache

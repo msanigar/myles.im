@@ -60,7 +60,6 @@ export default function Form({}: Props) {
               {...register('email', { required: true })}
               type="email"
               placeholder=""
-              value=""
             />
             <span className="icon is-small is-left">
               <i className="fas fa-envelope"></i>
