@@ -16,6 +16,12 @@ export default function Index({}: Props) {
       <div className="container">
         <div className="columns is-centered">
           <div className="column is-half">
+            <section className="section">
+              <h1 className="title">Section</h1>
+              <h2 className="subtitle">
+                <strong>Hey!</strong> Feel free to get in touch...
+              </h2>
+            </section>
             <Form />
           </div>
         </div>
