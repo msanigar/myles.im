@@ -8,7 +8,6 @@ export default function Form({}: Props) {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
   const RequiredELm = ({ prop }) => (
     <p className="help is-danger">Please enter a valid {prop}</p>
   );
@@ -16,24 +15,47 @@ export default function Form({}: Props) {
     input: true,
     'is-danger': errors.name,
   });
-
   const emailClasses = classNames({
     input: true,
     'is-danger': errors.email,
   });
-
   const textClasses = classNames({
     textarea: true,
     'is-danger': errors.text,
   });
+  function encode(data) {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+      )
+      .join('&');
+  }
+  const onSubmit = (data, e) => {
+    e.preventDefault();
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': 'react-validation-form',
+        ...data,
+      }),
+    })
+      .then((response) => {
+        console.log('wooo!');
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="box">
       <form
+        onSubmit={handleSubmit(onSubmit)}
         name="contact"
         method="POST"
         data-netlify="true"
         data-netlify-recaptcha="true"
-        onSubmit={handleSubmit(onSubmit)}
       >
         <input type="hidden" name="form-name" value="contact" />
         <div className="field">
