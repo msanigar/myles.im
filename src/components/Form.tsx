@@ -53,9 +53,9 @@ export default function Form({}: Props) {
       <form
         onSubmit={handleSubmit(onSubmit)}
         name="contact"
+        action="/"
         method="POST"
         data-netlify="true"
-        data-netlify-recaptcha="true"
       >
         <input type="hidden" name="form-name" value="contact" />
         <div className="field">
@@ -140,7 +140,6 @@ export default function Form({}: Props) {
           <div className="control">
             <button className="button is-link is-light">Cancel</button>
           </div>
-          <div className="control" data-netlify-recaptcha="true"></div>
         </div>
       </form>
     </div>
