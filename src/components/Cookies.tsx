@@ -1,6 +1,9 @@
-type Props = {};
-export default function Cookies({}: Props) {
-  return (
+type Props = {
+  setHidden: () => void;
+  hidden: boolean;
+};
+export default function Cookies({ setHidden, hidden }: Props) {
+  return !hidden ? (
     <div
       role="dialog"
       aria-live="polite"
@@ -26,10 +29,11 @@ export default function Cookies({}: Props) {
           aria-label="dismiss cookie message"
           role="button"
           className="cpck-btn cpck-dismiss"
+          onClick={setHidden}
         >
           <span>👍</span> Got it!
         </a>
       </div>
     </div>
-  );
+  ) : null;
 }
