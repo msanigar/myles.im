@@ -143,8 +143,8 @@ collections:
         choose_url: true
         default: ''
         media_library:
-        config:
-          multiple: true
+          config:
+            multiple: true
       - label: 'Body'
         name: 'body'
         widget: 'markdown'
