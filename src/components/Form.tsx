@@ -129,7 +129,7 @@ export default function Form({}: Props) {
               <label className="label">Subject</label>
               <div className="control">
                 <div className="select">
-                  <select>
+                  <select {...register('subject', { required: false })}>
                     <option>General enquiry</option>
                     <option>Website bug report</option>
                   </select>
