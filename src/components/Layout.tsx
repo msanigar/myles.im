@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Navigation from './Navigation';
 import Footer from './Footer';
+import Cookies from './Cookies';
 
 type Props = {
   children: React.ReactNode;
@@ -27,8 +28,9 @@ export default function Layout({ children }: Props) {
         </Head>
         <Navigation />
         <main>{children}</main>
+        <Cookies />
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }

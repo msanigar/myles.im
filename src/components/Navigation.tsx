@@ -40,38 +40,23 @@ export default function Navigation() {
               <a className="navbar-item">Home</a>
             </Link>
             <Link href="/">
-              <a className="navbar-item">Documentation</a>
+              <a className="navbar-item">About</a>
             </Link>
-            <div className="navbar-item has-dropdown is-hoverable">
-              <Link href="/">
-                <a className="navbar-link">More</a>
-              </Link>
-              <div className="navbar-dropdown">
-                <Link href="/">
-                  <a className="navbar-item">home</a>
-                </Link>
-                <Link href="/">
-                  <a className="navbar-item">about</a>
-                </Link>
-                <Link href="/posts">
-                  <a className="navbar-item">blog</a>
-                </Link>
-                <hr className="navbar-divider" />
-                <Link href="/contact">
-                  <a className="navbar-item">Contact</a>
-                </Link>
-              </div>
-            </div>
+            <Link href="/posts">
+              <a className="navbar-item">Posts</a>
+            </Link>
           </div>
 
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <a className="button is-primary">
-                  <strong>
-                    Github <i className="fab fa-github"></i>
-                  </strong>
-                </a>
+                <Link href="/contact">
+                  <a className="button is-primary">
+                    <strong>
+                      Contact <i className="fas fa-envelope"></i>
+                    </strong>
+                  </a>
+                </Link>
               </div>
             </div>
           </div>

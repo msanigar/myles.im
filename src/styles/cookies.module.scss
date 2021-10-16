@@ -1,0 +1,75 @@
+.cpck-window {
+  background-color: #fff;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+  padding: 1em 1.5em;
+  position: fixed;
+  z-index: 10;
+}
+.cpck-invisible {
+  display: none !important;
+}
+.cpck-link {
+  border-bottom: 1px solid #485fc7;
+  padding-bottom: 2px;
+  &:hover {
+    border-bottom-width: 2px;
+  }
+  &:active {
+    background-color: #eff1fa;
+  }
+}
+.cpck-compliance {
+  margin-top: 1em;
+}
+.cpck-btn {
+  border: 2px solid #48c78e;
+  border-radius: 0.375em;
+  color: #48c78e;
+  display: inline-block;
+  font-weight: 700;
+  padding: 0.5em 1em;
+  vertical-align: top;
+  span {
+    margin-left: -0.125em;
+    margin-right: 0.5em;
+  }
+  &:hover {
+    background-color: #effaf5;
+    color: #257953;
+  }
+  &:active {
+    background-color: #dcf4e9;
+    border-color: #257953;
+    color: #1f6546;
+    outline: 0;
+  }
+  &:focus {
+    background-color: #dcf4e9;
+    border-color: #257953;
+    color: #1f6546;
+    outline: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cpck-window {
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+@media screen and (min-width: 769px) {
+  .cpck-window {
+    border-radius: 0.375em;
+    bottom: 1em;
+    right: 1em;
+    width: 20rem;
+  }
+}
+@media print {
+  .cpck-window {
+    border-radius: 0.375em;
+    bottom: 1em;
+    right: 1em;
+    width: 20rem;
+  }
+}
