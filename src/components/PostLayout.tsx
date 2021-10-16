@@ -19,6 +19,7 @@ type Props = {
   slug: string;
   tags: string[];
   author: string;
+  thumbnail?: string;
   description?: string;
   children: React.ReactNode;
 };
@@ -28,6 +29,7 @@ export default function PostLayout({
   slug,
   author,
   tags,
+  thumbnail,
   description = '',
   children,
 }: Props) {

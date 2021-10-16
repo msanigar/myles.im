@@ -15,9 +15,11 @@ export default function PostItem({ post }: Props) {
           <p className="subtitle">
             <Date date={parseISO(post.date)} />
           </p>
-          <figure className="image is-4by3">
-            <img src="https://bulma.io/images/placeholders/640x480.png" />
-          </figure>
+          {post.thumbnail && (
+            <figure className="image is-4by3">
+              <img src={post.thumbnail} />
+            </figure>
+          )}
         </article>
       </div>
     </Link>
