@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import classNames from 'classnames';
+import Notification from './Notification';
 
 type Props = {};
 export default function Form({}: Props) {
@@ -7,10 +9,13 @@ export default function Form({}: Props) {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
   const RequiredELm = ({ prop }) => (
     <p className="help is-danger">Please enter a valid {prop}</p>
   );
+  const [show, setShow] = useState(false);
+  const [error, setError] = useState(false);
   const nameClasses = classNames({
     input: true,
     'is-danger': errors.name,
@@ -30,6 +35,12 @@ export default function Form({}: Props) {
       )
       .join('&');
   }
+  const clearShow = () => {
+    setTimeout(() => {
+      setError(false);
+      setShow(false);
+    }, 5000);
+  };
   const onSubmit = (data, e) => {
     e.preventDefault();
     fetch('/', {
@@ -41,15 +52,21 @@ export default function Form({}: Props) {
       }),
     })
       .then((response) => {
-        console.log('wooo!');
         console.log(response);
+        setShow(true);
+        reset();
+        clearShow();
       })
       .catch((error) => {
+        setError(true);
+        setShow(true);
         console.log(error);
+        clearShow();
       });
   };
   return (
     <div className="box">
+      <Notification show={show} error={error} />
       <form
         onSubmit={handleSubmit(onSubmit)}
         name="contact"
@@ -97,7 +114,7 @@ export default function Form({}: Props) {
               <div className="control has-icons-left has-icons-right">
                 <input
                   className="input"
-                  {...register('tel', { required: true })}
+                  {...register('tel', { required: false })}
                   type="tel"
                   placeholder=""
                 />
@@ -113,8 +130,8 @@ export default function Form({}: Props) {
               <div className="control">
                 <div className="select">
                   <select>
-                    <option>Select dropdown</option>
-                    <option>With options</option>
+                    <option>General enquiry</option>
+                    <option>Website bug report</option>
                   </select>
                 </div>
               </div>
@@ -136,9 +153,6 @@ export default function Form({}: Props) {
         <div className="field is-grouped">
           <div className="control">
             <button className="button is-link">Submit</button>
-          </div>
-          <div className="control">
-            <button className="button is-link is-light">Cancel</button>
           </div>
         </div>
       </form>
