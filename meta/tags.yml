@@ -1,13 +1,9 @@
 tags:
-  - slug: document
-    name: document
-  - slug: mock
-    name: mock
-  - slug: style
-    name: style
-  - slug: license
-    name: license
-  - slug: mdx
-    name: mdx
-  - slug: markdown
-    name: markdown
+  - slug: react
+    name: React
+  - slug: nextjs
+    name: Next.js
+  - slug: typescript
+    name: TypeScript
+  - slug: netlify
+    name: Netlify
