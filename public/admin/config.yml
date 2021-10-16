@@ -110,6 +110,12 @@ collections:
         format: "YYYY-MM-DD"
         dateFormat: "YYYY-MM-DD"
         timeFormat: false
+      - label: "Featured Image"
+        name: "thumbnail"
+        widget: "image"
+        choose_url: true
+        default: ""
+        media_library:
       - label: Author
         name: "author"
         widget: relation
@@ -136,12 +142,6 @@ collections:
           displayFields:
             - "tags.*.name"
           valueField: "tags.*.slug"
-      - label: "Featured Image"
-        name: "thumbnail"
-        widget: "image"
-        choose_url: true
-        default: ""
-        media_library:
       config:
         multiple: true
       - label: "Body"
