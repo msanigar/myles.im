@@ -29,12 +29,6 @@ export default function Layout({ children }: Props) {
           <link rel="apple-touch-icon" href="/icon.png" />
           <meta name="theme-color" content="#fff" />
           <script
-            defer
-            data-domain="myles.im"
-            src="https://plausible.io/js/plausible.js"
-          ></script>
-          <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-          <script
             src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
             crossOrigin="anonymous"
           ></script>
@@ -46,6 +40,12 @@ export default function Layout({ children }: Props) {
         )}
         <Footer />
       </div>
+      <script
+        async
+        data-domain="myles.im"
+        src="https://plausible.io/js/plausible.js"
+      ></script>
+      <script src="https://apps.elfsight.com/p/platform.js" async></script>
     </>
   );
 }
