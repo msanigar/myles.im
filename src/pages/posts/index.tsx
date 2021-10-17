@@ -25,7 +25,6 @@ export default function Index({ posts, tags, pagination }: Props) {
       <OpenGraphMeta url={url} title={title} />
       <TwitterCardMeta url={url} title={title} />
       <PostList posts={posts} tags={tags} pagination={pagination} />
-      <div className="elfsight-app-c1fa2086-e756-42db-a712-53f91b5195db"></div>
     </Layout>
   );
 }

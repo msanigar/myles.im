@@ -9,7 +9,7 @@ export default function Index() {
       <BasicMeta url={'/'} />
       <OpenGraphMeta url={'/'} />
       <TwitterCardMeta url={'/'} />
-      <section className="hero is-success is-fullheight">
+      <section className="hero is-success is-large">
         <div className="hero-body">
           <div className="container has-text-centered">
             <p className="title">myles.im ~ work in progress</p>
@@ -17,6 +17,7 @@ export default function Index() {
           </div>
         </div>
       </section>
+      <div className="elfsight-app-c1fa2086-e756-42db-a712-53f91b5195db"></div>
     </Layout>
   );
 }
