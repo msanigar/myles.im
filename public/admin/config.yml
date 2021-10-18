@@ -41,6 +41,38 @@ collections:
           - label: 'GitHub account'
             name: 'github_account'
             widget: 'string'
+          - label: 'Header Image'
+            name: 'header'
+            widget: 'image'
+            choose_url: true
+            default: ''
+            media_library:
+              config:
+                multiple: false
+          - label: 'Featured Image (1)'
+            name: 'featureone'
+            widget: 'image'
+            choose_url: true
+            default: ''
+            media_library:
+              config:
+                multiple: false
+          - label: 'Featured Image (2)'
+            name: 'featuretwo'
+            widget: 'image'
+            choose_url: true
+            default: ''
+            media_library:
+              config:
+                multiple: false
+          - label: 'Featured Image (3)'
+            name: 'featurethree'
+            widget: 'image'
+            choose_url: true
+            default: ''
+            media_library:
+              config:
+                multiple: false
 
   - name: 'meta'
     label: 'Meta'
