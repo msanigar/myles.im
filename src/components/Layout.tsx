@@ -45,6 +45,11 @@ export default function Layout({ children }: Props) {
         data-domain="myles.im"
         src="https://plausible.io/js/plausible.js"
       ></script>
+      <script
+        async
+        type="text/javascript"
+        src="vendor/instafeed.min.js"
+      ></script>
     </>
   );
 }
