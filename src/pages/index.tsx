@@ -17,9 +17,11 @@ export default function Index() {
           </div>
         </div>
       </section>
-      <div className="elfsight-app-c1fa2086-e756-42db-a712-53f91b5195db"></div>
-      <div className="elfsight-app-7d1ce7c1-caf3-42e7-ad0e-ee3d7807f02e"></div>
-      <div className="elfsight-app-59bdb7b0-0f06-4f81-b9f5-24d3ef875a73"></div>
+      <div className="container">
+        <div className="elfsight-app-c1fa2086-e756-42db-a712-53f91b5195db"></div>
+        <div className="elfsight-app-7d1ce7c1-caf3-42e7-ad0e-ee3d7807f02e"></div>
+        <div className="elfsight-app-59bdb7b0-0f06-4f81-b9f5-24d3ef875a73"></div>
+      </div>
     </Layout>
   );
 }
