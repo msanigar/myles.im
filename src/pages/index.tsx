@@ -2,6 +2,7 @@ import Layout from '../components/Layout';
 import BasicMeta from '../components/meta/BasicMeta';
 import OpenGraphMeta from '../components/meta/OpenGraphMeta';
 import TwitterCardMeta from '../components/meta/TwitterCardMeta';
+import config from '../lib/config';
 
 export default function Index() {
   return (
@@ -17,6 +18,12 @@ export default function Index() {
           </div>
         </div>
       </section>
+      <div>
+        {config.header && <img src={config.header} />}
+        {config.featureone && <img src={config.featureone} />}
+        {config.featuretwo && <img src={config.featuretwo} />}
+        {config.featurethree && <img src={config.featurethree} />}
+      </div>
       <div className="container">
         <div className="elfsight-app-c1fa2086-e756-42db-a712-53f91b5195db"></div>
         <div className="elfsight-app-7d1ce7c1-caf3-42e7-ad0e-ee3d7807f02e"></div>
