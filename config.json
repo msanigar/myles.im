@@ -1,7 +1,7 @@
 {
-  "base_url": "https://myles.im/",
   "site_title": "myles.im ~ nextjs ~ netlify ~ typescript",
-  "site_description": "myles.im ~ personal website & netlify playground",
+  "twitter_account": "@msanigar",
+  "base_url": "https://myles.im/",
   "site_keywords": [
     {
       "keyword": "Next.js"
@@ -13,7 +13,11 @@
       "keyword": "React"
     }
   ],
-  "posts_per_page": 12,
-  "twitter_account": "@msanigar",
-  "github_account": "msanigar"
+  "site_description": "myles.im ~ personal website & netlify playground",
+  "featurethree": "/images/12015163_767180960077279_4588161264538298053_o.jpeg",
+  "header": "/images/600x300.png",
+  "featureone": "/images/93004719_2559235684299348_2028317418140467200_n.jpeg",
+  "github_account": "msanigar",
+  "featuretwo": "/images/195615068_2910106975878882_8961646285885053791_n.jpeg",
+  "posts_per_page": 12
 }
