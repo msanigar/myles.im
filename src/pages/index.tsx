@@ -12,6 +12,9 @@ const heroStyle = {
   backgroundRepeat: 'no-repeat',
 };
 
+const SLIDE_COUNT = config.feature_images?.length;
+const slides = Array.from(Array(SLIDE_COUNT).keys());
+
 export default function Index() {
   return (
     <Layout>
@@ -30,9 +33,7 @@ export default function Index() {
         </div>
       </section>
       <div>
-        {config.feature_images?.length > 0 && (
-          <Carousel slides={config.feature_images} />
-        )}
+        {config.feature_images?.length > 0 && <Carousel slides={slides} />}
       </div>
       <div className="container">
         <div className="elfsight-app-c1fa2086-e756-42db-a712-53f91b5195db"></div>

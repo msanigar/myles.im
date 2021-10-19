@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { PrevButton, NextButton } from './CarouselButtons';
 import { Slide } from './CarouselSlide';
+import config from '../../lib/config';
 
 const Carousel = ({ slides }) => {
   const [slidesInView, setSlidesInView] = useState([]);
@@ -9,7 +10,7 @@ const Carousel = ({ slides }) => {
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
 
-  const media = [slides];
+  const media = config.feature_images;
   const mediaByIndex = (index) => media[index % media.length];
 
   const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
