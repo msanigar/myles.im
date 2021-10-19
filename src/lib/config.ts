@@ -9,7 +9,7 @@ type Config = {
   readonly twitter_account: string;
   readonly github_account: string;
   readonly header: string;
-  readonly feature_images: [string];
+  readonly feature_images: string[];
 };
 
 export default config as Config;
