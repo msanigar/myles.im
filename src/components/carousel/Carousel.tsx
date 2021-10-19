@@ -46,13 +46,14 @@ const Carousel = ({ slides }) => {
     <div className="embla">
       <div className="embla__viewport" ref={viewportRef}>
         <div className="embla__container">
-          {slides.map((index) => (
-            <Slide
-              key={index}
-              imgSrc={mediaByIndex(index)}
-              inView={slidesInView.indexOf(index) > -1}
-            />
-          ))}
+          {Array.isArray(slides) &&
+            slides.map((index) => (
+              <Slide
+                key={index}
+                imgSrc={mediaByIndex(index)}
+                inView={slidesInView.indexOf(index) > -1}
+              />
+            ))}
         </div>
       </div>
       <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
