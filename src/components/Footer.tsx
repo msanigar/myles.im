@@ -2,11 +2,11 @@ import { SocialList } from '../components/SocialList';
 
 export default function Footer() {
   return (
-    <footer className="footer has-background-primary">
-      <div className="container content has-text-centered has-text">
+    <footer className="footer has-background-success">
+      <div className="container content has-text-centered has-text-white">
         <div className="columns">
           <div className="column">
-            <h6>About Us</h6>
+            <h6 className="has-text-white">About Us</h6>
             <p className="has-text-center">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -15,31 +15,24 @@ export default function Footer() {
             </p>
           </div>
           <div className="column">
+            <h6 className="has-text-white">About Us</h6>
             <div className="level">
-              <div className="level-left">
-                <div className="level-item">
-                  <a className="title is-4" href="#">
-                    Bulma Footer #1
-                  </a>
-                </div>
-              </div>
-              <div className="level-right">
-                <a className="level-item" href="#">
-                  Features
-                </a>
-                <a className="level-item" href="#">
-                  Enterprise
-                </a>
-                <a className="level-item" href="#">
-                  Support
-                </a>
-                <a className="level-item" href="#">
-                  ICO
-                </a>
-              </div>
+              <a className="level-item has-text-white" href="#">
+                Features
+              </a>
+              <a className="level-item has-text-white" href="#">
+                Enterprise
+              </a>
+              <a className="level-item has-text-white" href="#">
+                Support
+              </a>
+              <a className="level-item has-text-white" href="#">
+                ICO
+              </a>
             </div>
           </div>
           <div className="column">
+            <h6 className="has-text-white">About Us</h6>
             <SocialList />
           </div>
         </div>

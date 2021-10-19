@@ -23,11 +23,14 @@ export default function PostList({ posts, tags, pagination }: Props) {
             <strong>Netflify CMS</strong> blows my mind.
           </h2>
         </section>
-        <div className="columns is-multiline is-mobile">
-          {posts.map((it, i) => (
-            <PostItem key={i} post={it} />
-          ))}
-        </div>
+        <section className="section">
+          <div className="columns is-multiline">
+            {posts.map((it, i) => (
+              <PostItem key={i} post={it} />
+            ))}
+          </div>
+        </section>
+        {/*
         <div className={'columns'}>
           <ul className={'categories'}>
             {tags.map((it, i) => (
@@ -37,15 +40,20 @@ export default function PostList({ posts, tags, pagination }: Props) {
             ))}
           </ul>
         </div>
+      */}
       </div>
-      <Pagination
-        current={pagination.current}
-        pages={pagination.pages}
-        link={{
-          href: (page) => (page === 1 ? '/posts' : '/posts/page/[page]'),
-          as: (page) => (page === 1 ? null : '/posts/page/' + page),
-        }}
-      />
+      <section className="section">
+        {pagination.pages > 1 && (
+          <Pagination
+            current={pagination.current}
+            pages={pagination.pages}
+            link={{
+              href: (page) => (page === 1 ? '/posts' : '/posts/page/[page]'),
+              as: (page) => (page === 1 ? null : '/posts/page/' + page),
+            }}
+          />
+        )}
+      </section>
     </>
   );
 }

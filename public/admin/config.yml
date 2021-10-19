@@ -49,30 +49,14 @@ collections:
             media_library:
               config:
                 multiple: false
-          - label: 'Featured Image (1)'
-            name: 'featureone'
+          - label: 'Featured Images'
+            name: 'feature_images'
             widget: 'image'
             choose_url: true
             default: ''
             media_library:
               config:
-                multiple: false
-          - label: 'Featured Image (2)'
-            name: 'featuretwo'
-            widget: 'image'
-            choose_url: true
-            default: ''
-            media_library:
-              config:
-                multiple: false
-          - label: 'Featured Image (3)'
-            name: 'featurethree'
-            widget: 'image'
-            choose_url: true
-            default: ''
-            media_library:
-              config:
-                multiple: false
+                multiple: true
 
   - name: 'meta'
     label: 'Meta'
@@ -130,9 +114,6 @@ collections:
     identifier_field: slug
     summary: '{{title}}'
     fields:
-      - label: 'Slug'
-        name: 'slug'
-        widget: 'string'
       - label: 'Title'
         name: 'title'
         widget: 'string'
@@ -177,6 +158,10 @@ collections:
         media_library:
           config:
             multiple: true
+      - label: 'Short Description'
+        name: 'shortText'
+        widget: 'string'
+        hint: 'A short bit of text that is shown on the /posts/ page, not your main content'
       - label: 'Body'
         name: 'body'
         widget: 'markdown'

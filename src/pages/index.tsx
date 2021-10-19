@@ -3,6 +3,7 @@ import BasicMeta from '../components/meta/BasicMeta';
 import OpenGraphMeta from '../components/meta/OpenGraphMeta';
 import TwitterCardMeta from '../components/meta/TwitterCardMeta';
 import config from '../lib/config';
+import Carousel from '../components/carousel/Carousel';
 
 export default function Index() {
   return (
@@ -20,9 +21,9 @@ export default function Index() {
       </section>
       <div>
         {config.header && <img src={config.header} />}
-        {config.featureone && <img src={config.featureone} />}
-        {config.featuretwo && <img src={config.featuretwo} />}
-        {config.featurethree && <img src={config.featurethree} />}
+        {config.feature_images?.length > 0 && (
+          <Carousel slides={config.feature_images} />
+        )}
       </div>
       <div className="container">
         <div className="elfsight-app-c1fa2086-e756-42db-a712-53f91b5195db"></div>

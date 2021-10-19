@@ -14,10 +14,7 @@
     }
   ],
   "site_description": "myles.im ~ personal website & netlify playground",
-  "featurethree": "/images/600x300.png",
   "header": "/images/600x300.png",
-  "featureone": "/images/600x300.png",
   "github_account": "msanigar",
-  "featuretwo": "/images/600x300.png",
   "posts_per_page": 12
 }

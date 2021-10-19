@@ -51,7 +51,7 @@ export default function Navigation() {
             <div className="navbar-item">
               <div className="buttons">
                 <Link href="/contact">
-                  <a className="button is-primary">
+                  <a className="button is-info">
                     <strong>
                       Contact <i className="fas fa-envelope"></i>
                     </strong>

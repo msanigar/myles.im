@@ -9,18 +9,28 @@ type Props = {
 export default function PostItem({ post }: Props) {
   return (
     <Link href={'/posts/' + post.slug}>
-      <div className="column is-one-third tile is-parent">
-        <article className="tile is-child notification is-info">
-          <p className="title">{post.title}</p>
-          <p className="subtitle">
-            <Date date={parseISO(post.date)} />
-          </p>
-          {post.thumbnail && (
+      <div className="column is-one-third" style={{ cursor: `pointer` }}>
+        <div className="card">
+          <div className="card-image">
             <figure className="image is-4by3">
-              <img src={post.thumbnail} />
+              <img
+                style={{ objectFit: `cover` }}
+                src={post.thumbnail}
+                alt="Placeholder image"
+              />
             </figure>
-          )}
-        </article>
+          </div>
+          <div className="card-content">
+            <p className="has-text-weight-bold">{post.title}</p>
+            <div className="content">
+              {post.shortText}
+              <br />
+              <div className="has-text-right	">
+                <Date date={parseISO(post.date)} />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </Link>
   );
