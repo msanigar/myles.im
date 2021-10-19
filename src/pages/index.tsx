@@ -5,13 +5,23 @@ import TwitterCardMeta from '../components/meta/TwitterCardMeta';
 import config from '../lib/config';
 import Carousel from '../components/carousel/Carousel';
 
+const heroStyle = {
+  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url(${config?.header})`,
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+};
+
 export default function Index() {
   return (
     <Layout>
       <BasicMeta url={'/'} />
       <OpenGraphMeta url={'/'} />
       <TwitterCardMeta url={'/'} />
-      <section className="hero is-success is-large">
+      <section
+        style={config?.header ? heroStyle : null}
+        className="hero is-success is-large"
+      >
         <div className="hero-body">
           <div className="container has-text-centered">
             <p className="title">myles.im ~ work in progress</p>
@@ -20,7 +30,6 @@ export default function Index() {
         </div>
       </section>
       <div>
-        {config.header && <img src={config.header} />}
         {config.feature_images?.length > 0 && (
           <Carousel slides={config.feature_images} />
         )}
