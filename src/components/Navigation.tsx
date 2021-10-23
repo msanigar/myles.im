@@ -42,6 +42,9 @@ export default function Navigation() {
             <Link href="/about">
               <a className="navbar-item">About</a>
             </Link>
+            <Link href="/archive">
+              <a className="navbar-item">Archive</a>
+            </Link>
             <Link href="/posts">
               <a className="navbar-item">Posts</a>
             </Link>
