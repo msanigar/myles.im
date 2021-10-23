@@ -39,7 +39,7 @@ export default function Navigation() {
             <Link href="/">
               <a className="navbar-item">Home</a>
             </Link>
-            <Link href="/">
+            <Link href="/about">
               <a className="navbar-item">About</a>
             </Link>
             <Link href="/posts">
