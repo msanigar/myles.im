@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from '../../public/styles/content.module.css';
 import Author from './Author';
-import Copyright from './Copyright';
 import Date from './Date';
 import Layout from './Layout';
 import BasicMeta from './meta/BasicMeta';
@@ -12,6 +11,7 @@ import { SocialList } from './SocialList';
 import TagButton from './TagButton';
 import { getAuthor } from '../lib/authors';
 import { getTag } from '../lib/tags';
+import { useRouter } from 'next/router';
 
 type Props = {
   title: string;
@@ -35,6 +35,8 @@ export default function PostLayout({
 }: Props) {
   const keywords = tags.map((it) => getTag(it).name);
   const authorName = getAuthor(author).name;
+  const router = useRouter();
+
   return (
     <Layout>
       <BasicMeta
@@ -62,32 +64,40 @@ export default function PostLayout({
         description={description}
       />
       <div className={'container'}>
-        <article>
-          <header>
+        <article className="block">
+          <header className="postlist-heads">
             <h1>{title}</h1>
             <div className={'metadata'}>
               <div>
                 <Date date={date} />
               </div>
-              <div>
+              {/* <div>
                 <Author author={getAuthor(author)} />
-              </div>
+              </div> */}
             </div>
+            {/* <ul className={'tag-list'}>
+              {tags.map((it, i) => (
+                <li key={i}>
+                  <TagButton tag={getTag(it)} />
+                </li>
+              ))}
+              </ul> */}
           </header>
           <div className={styles.content}>{children}</div>
-          <ul className={'tag-list'}>
-            {tags.map((it, i) => (
-              <li key={i}>
-                <TagButton tag={getTag(it)} />
-              </li>
-            ))}
-          </ul>
         </article>
+        <button
+          onClick={() => router.back()}
+          className="button is-info is-outlined"
+        >
+          <span className="icon is-small">
+            <i className="fas fa-long-arrow-alt-left"></i>
+          </span>
+          <span>Go Back</span>
+        </button>
         <footer>
           <div className={'social-list'}>
             <SocialList />
           </div>
-          <Copyright />
         </footer>
       </div>
     </Layout>

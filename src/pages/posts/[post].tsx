@@ -23,7 +23,11 @@ export type Props = {
   source: MDXRemoteSerializeResult;
 };
 
-const components = { InstagramEmbed, YouTube, TwitterTweetEmbed };
+const components = {
+  InstagramEmbed,
+  YouTube,
+  TwitterTweetEmbed,
+};
 const slugToPostContent = ((postContents) => {
   let hash = {};
   postContents.forEach((it) => (hash[it.slug] = it));
@@ -40,6 +44,7 @@ export default function Post({
   source,
 }: Props) {
   const content = <MDXRemote {...source} components={components} />;
+
   return (
     <PostLayout
       title={title}

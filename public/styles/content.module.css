@@ -1,5 +1,5 @@
 .content {
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   color: #222;
   font-weight: 200;
 }
@@ -22,6 +22,12 @@
   margin: 2.5rem 0 0 0;
 }
 
+.content img {
+  max-width: 480px;
+  float: right;
+  margin: 0 0px 12px 12px;
+}
+
 .content h2,
 .content h3,
 .content h4,
@@ -37,7 +43,7 @@
   font-size: 1.5rem;
   color: #9b9b9b;
   display: none;
-  content: "#";
+  content: '#';
 }
 
 .content pre {
@@ -56,7 +62,7 @@
 }
 
 .content code {
-  font-family: "Ubuntu Mono", monospace;
+  font-family: 'Ubuntu Mono', monospace;
   font-size: 85%;
   padding: 0.2em 0.4em;
   margin: 0;
@@ -70,7 +76,7 @@
 
 .content blockquote::before {
   position: absolute;
-  content: "\201C";
+  content: '\201C';
   font-size: 6em;
   font-family: roboto, serif;
   line-height: 1.5rem;
@@ -121,7 +127,7 @@
 }
 
 .content kbd {
-  font-family: "Ubuntu Mono", monospace;
+  font-family: 'Ubuntu Mono', monospace;
 }
 
 .content img {

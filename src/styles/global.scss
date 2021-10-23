@@ -22,3 +22,20 @@
 main {
   min-height: 70vh;
 }
+
+.tag-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row-reverse;
+
+  li {
+    margin: 0 24px 0 24px;
+  }
+}
+
+.postlist-heads {
+  text-align: center;
+  h1 {
+    font-size: 1.75rem;
+  }
+}
