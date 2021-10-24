@@ -1,7 +1,8 @@
 module.exports = {
   pageExtensions: ['tsx'],
   images: {
-    domains: ['res.cloudinary.com'],
+    path: 'https://res.cloudinary.com/dgsslqupd/image/upload/',
+    loader: 'cloudinary',
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.module.rules.push(

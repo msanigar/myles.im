@@ -18,18 +18,29 @@ export default function Page({}: Props) {
       <OpenGraphMeta url={url} title={title} />
       <TwitterCardMeta url={url} title={title} />
       <div className="columns is-multiline">
-        {data.map((img, k) => (
-          <div
-            className="column"
-            style={{
-              position: `relative`,
-              minWidth: `480px`,
-              height: `480px`,
-            }}
-          >
-            <Image key={k} src={img} layout="fill" objectFit="cover" />
-          </div>
-        ))}
+        {data.map((img, k) => {
+          const formattedSrc = img.replace(
+            'https://res.cloudinary.com/dgsslqupd/image/upload/',
+            ''
+          );
+          return (
+            <div
+              className="column"
+              style={{
+                position: `relative`,
+                minWidth: `480px`,
+                height: `480px`,
+              }}
+            >
+              <Image
+                key={k}
+                src={formattedSrc}
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+          );
+        })}
       </div>
     </Layout>
   );
