@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import Image from 'next/image';
 import React from 'react';
 import Layout from '../../components/Layout';
@@ -46,7 +46,7 @@ export default function Page({}: Props) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       data,
