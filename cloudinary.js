@@ -5,7 +5,7 @@ const fs = require('fs'),
 const images = `https://${api.key}:${api.secret}@${api.url}/image?max_results=500`;
 
 // Cloudinary processing parameters
-const imgParam = 'c_fit,f_auto,h_1280,w_1280/';
+const imgParam = 'c_fit,f_auto,h_640,w_640/';
 
 const processParam = (filename) => {
   let insertPos = filename.indexOf('upload/') + 7;

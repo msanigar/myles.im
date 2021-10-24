@@ -17,30 +17,28 @@ export default function Page({}: Props) {
       <BasicMeta url={url} title={title} />
       <OpenGraphMeta url={url} title={title} />
       <TwitterCardMeta url={url} title={title} />
-      <div className="columns is-multiline">
-        {data.map((img, k) => {
-          const formattedSrc = img.replace(
-            'https://res.cloudinary.com/dgsslqupd/image/upload/',
-            ''
-          );
-          return (
-            <div
-              className="column"
-              style={{
-                position: `relative`,
-                minWidth: `480px`,
-                height: `480px`,
-              }}
-            >
-              <Image
+      <div className="container is-fullhd">
+        <div className="columns is-multiline">
+          {data.map((img, k) => {
+            const formattedSrc = img.replace(
+              'https://res.cloudinary.com/dgsslqupd/image/upload/',
+              ''
+            );
+            return (
+              <div
+                className="column m-1"
                 key={k}
-                src={formattedSrc}
-                layout="fill"
-                objectFit="cover"
-              />
-            </div>
-          );
-        })}
+                style={{
+                  position: `relative`,
+                  minWidth: `420px`,
+                  height: `420px`,
+                }}
+              >
+                <Image src={formattedSrc} layout="fill" objectFit="cover" />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </Layout>
   );
