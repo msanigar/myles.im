@@ -20,7 +20,15 @@
 }
 
 main {
-  min-height: 70vh;
+  min-height: 64vh;
+}
+
+nav.navbar {
+  min-height: 6vh;
+}
+
+footer {
+  height: 30vh;
 }
 
 .tag-list {
