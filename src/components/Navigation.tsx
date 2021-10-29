@@ -18,7 +18,7 @@ export default function Navigation() {
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <a className="navbar-item" href="/">
-            <i className="far fa-hand-peace"></i>
+            <i className="fas fa-home"></i>
           </a>
           <a
             role="button"
@@ -35,33 +35,17 @@ export default function Navigation() {
         </div>
 
         <div id="navbarBasicExample" className={navClasses}>
-          <div className="navbar-start">
-            <Link href="/">
-              <a className="navbar-item">Home</a>
-            </Link>
+          <div className="navbar-start"></div>
+          <div className="navbar-end">
             <Link href="/about">
               <a className="navbar-item">About</a>
             </Link>
-            <Link href="/archive">
-              <a className="navbar-item">Archive</a>
+            <Link href="/contact">
+              <a className="navbar-item">Contact</a>
             </Link>
             <Link href="/posts">
               <a className="navbar-item">Posts</a>
             </Link>
-          </div>
-
-          <div className="navbar-end">
-            <div className="navbar-item">
-              <div className="buttons">
-                <Link href="/contact">
-                  <a className="button is-info">
-                    <strong>
-                      Contact <i className="fas fa-envelope"></i>
-                    </strong>
-                  </a>
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </nav>
