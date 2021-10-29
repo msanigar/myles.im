@@ -12,8 +12,8 @@ export default function Index() {
       <TwitterCardMeta url={'/'} />
       <section className="hero">
         <div className="hero-body">
-          <div className="level-item">
-            <div className="level-item is-hero-avatar-item p-6">
+          <div className="level">
+            <div className="level-item level-right is-hero-avatar-item p-6">
               <div className="image is-user-avatar">
                 <img
                   style={{
@@ -25,7 +25,7 @@ export default function Index() {
                 />
               </div>
             </div>
-            <div className="level-item is-hero-content-item">
+            <div className="level-item level-left is-hero-content-item">
               <div>
                 <h1 className="title is-spaced">
                   Hey, I'm <b>Myles</b>
