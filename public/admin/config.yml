@@ -8,6 +8,7 @@ publish_mode: editorial_workflow
 collections:
   - name: 'config'
     label: 'Config'
+    create: true
     delete: false
     editor:
       preview: false
