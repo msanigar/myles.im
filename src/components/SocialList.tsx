@@ -1,18 +1,37 @@
 import React from 'react';
+import Facebook from '../assets/facebook-alt.svg';
+import Instagram from '../assets/instagram-alt.svg';
 import Twitter from '../assets/twitter-alt.svg';
 import GitHub from '../assets/github-alt.svg';
 import config from '../lib/config';
 
-export function SocialList({}) {
+export function SocialList({ style }) {
+  const theme = style === 'dark' ? '#000' : '#fff';
   return (
-    <div>
+    <div className="socials">
+      <a
+        title="Facebook"
+        href={`https://twitter.com/${config.twitter_account}`}
+        target="_blank"
+        rel="noopener"
+      >
+        <Facebook width={24} height={24} fill={theme} />
+      </a>
+      <a
+        title="Instagram"
+        href={`https://twitter.com/${config.twitter_account}`}
+        target="_blank"
+        rel="noopener"
+      >
+        <Instagram width={24} height={24} fill={theme} />
+      </a>
       <a
         title="Twitter"
         href={`https://twitter.com/${config.twitter_account}`}
         target="_blank"
         rel="noopener"
       >
-        <Twitter width={24} height={24} fill={'#fff'} />
+        <Twitter width={24} height={24} fill={theme} />
       </a>
       <a
         title="GitHub"
@@ -20,7 +39,7 @@ export function SocialList({}) {
         target="_blank"
         rel="noopener"
       >
-        <GitHub width={24} height={24} fill={'#fff'} />
+        <GitHub width={24} height={24} fill={theme} />
       </a>
     </div>
   );

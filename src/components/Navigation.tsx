@@ -17,9 +17,11 @@ export default function Navigation() {
     <>
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <a className="navbar-item" href="/">
-            <i className="fas fa-home"></i>
-          </a>
+          <Link href="/about">
+            <a className="navbar-item">
+              <img src="images/logo-light.png" />
+            </a>
+          </Link>
           <a
             role="button"
             onClick={() => setActive(!active)}

@@ -1,4 +1,5 @@
 @import '~bulma/bulma';
+@import './mixins.module.scss';
 @import './syntax.module.scss';
 @import './cookies.module.scss';
 @import './carousel.module.scss';
@@ -19,16 +20,14 @@
   }
 }
 
+.root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 main {
-  min-height: 64vh;
-}
-
-nav.navbar {
-  min-height: 6vh;
-}
-
-footer {
-  min-height: 26vh;
+  flex: 1;
 }
 
 .tag-list {
@@ -48,7 +47,53 @@ footer {
   }
 }
 
+.socials {
+  a {
+    margin-right: 20px;
+  }
+}
+
 svg {
   max-width: 100%;
   height: auto;
+}
+
+.intro {
+  display: block;
+  padding: 50px 25px 80px;
+  text-align: center;
+
+  @include desktop {
+    width: 940px;
+    max-width: 100%;
+    margin: 0px auto;
+    padding: 150px 10px;
+    display: flex;
+    text-align: left;
+    -webkit-box-align: center;
+    align-items: center;
+  }
+
+  .avatar {
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    min-width: 320px;
+    @include desktop {
+      width: 316px;
+      height: 316px;
+      padding: 30px;
+      border-radius: 50%;
+      margin: 0px auto;
+      border: 1px solid rgb(237, 237, 237);
+      flex-shrink: 0;
+    }
+  }
+  .content {
+    @include desktop {
+      padding-left: 30px;
+    }
+  }
 }
