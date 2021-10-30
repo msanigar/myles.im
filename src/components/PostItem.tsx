@@ -33,21 +33,23 @@ export default function PostItem({ post }: Props) {
         </ul>
         <div className="content">
           <p>
-            <span className="mb-0 pb-2">
+            <div className="block mb-0 pb-2">
               <strong>{post.title}</strong>
               {' - '}
               <small>
                 <Date date={parseISO(post.date)} />
               </small>
-            </span>
-            {truncateString(post.shortText)}
-            <span className="pt-2">
+            </div>
+            <div className="block mb-0 pb-2">
+              {truncateString(post.shortText)}
+            </div>
+            <div className="block mb-0 pb-2">
               <Link href={'/posts/' + post.slug}>
                 <a className="has-text-danger">
                   <b>Read more...</b>
                 </a>
               </Link>
-            </span>
+            </div>
           </p>
         </div>
       </div>

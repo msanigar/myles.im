@@ -102,13 +102,37 @@ svg {
 
     &:hover {
       opacity: 1;
-      -webkit-animation: flash 0.5s;
-      animation: flash 0.5s;
+      -webkit-animation: flash 1.5s;
+      animation: flash 1.5s;
     }
   }
 
   .media-content {
     padding: 0 1.25rem;
+  }
+}
+
+.container.work {
+  .tile {
+    cursor: pointer;
+
+    a {
+      text-decoration: none;
+    }
+
+    .image {
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      -webkit-transition: all 1s ease;
+
+      &:hover {
+        filter: grayscale(0%);
+        filter: gray;
+        -webkit-filter: grayscale(0%);
+        filter: none;
+        transition: 1s ease;
+      }
+    }
   }
 }
 

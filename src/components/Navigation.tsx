@@ -42,14 +42,11 @@ export default function Navigation() {
             <Link href="/">
               <a className="navbar-item">Home</a>
             </Link>
-            <Link href="/about">
-              <a className="navbar-item">About</a>
+            <Link href="/work">
+              <a className="navbar-item">Work</a>
             </Link>
             <Link href="/contact">
               <a className="navbar-item">Contact</a>
-            </Link>
-            <Link href="/work">
-              <a className="navbar-item">Work</a>
             </Link>
           </div>
         </div>
