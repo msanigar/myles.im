@@ -152,7 +152,7 @@ export default function Form({}: Props) {
         </div>
         <div className="field is-grouped">
           <div className="control">
-            <button className="button is-link">Submit</button>
+            <button className="button is-link is-info">Submit</button>
           </div>
         </div>
       </form>

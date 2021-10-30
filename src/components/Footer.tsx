@@ -5,13 +5,15 @@ export default function Footer() {
   const year = currentTime.getFullYear();
   return (
     <footer className="footer has-background-success">
-      <div className="container content has-text-centered has-text-white">
-        <div className="level">
+      <div className="level container content has-text-centered has-text-white">
+        <span className="level-item">
           <a className="level-item has-text-white" href="#">
             &copy; {year} myles.im
-          </a>{' '}
-          <SocialList style={'light'} />
-        </div>
+          </a>
+        </span>
+        <span className="level-item">
+          <SocialList style={'light'} />{' '}
+        </span>
       </div>
     </footer>
   );

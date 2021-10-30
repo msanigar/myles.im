@@ -31,12 +31,26 @@ main {
 }
 
 .tag-list {
-  list-style: none;
   display: flex;
-  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-top: 20px;
+
+  @include desktop {
+    padding-top: 0px;
+  }
 
   li {
-    margin: 0 24px 0 24px;
+    display: block;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: 400;
+
+    @include desktop {
+      margin-right: 30px;
+    }
   }
 }
 
@@ -58,16 +72,62 @@ svg {
   height: auto;
 }
 
+.home-post {
+  padding-bottom: 1rem;
+  padding-top: 3rem !important;
+  flex-direction: column;
+
+  @include desktop {
+    flex-direction: row;
+  }
+
+  &:first-of-type {
+    padding-top: 1.5rem !important;
+  }
+
+  .image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    @include desktop {
+      height: 170px;
+      width: 170px;
+    }
+
+    &:hover {
+      opacity: 1;
+      -webkit-animation: flash 0.5s;
+      animation: flash 0.5s;
+    }
+  }
+
+  .media-content {
+    padding: 0 1.25rem;
+  }
+}
+
+.under-sub {
+  &:after {
+    content: '';
+    width: 68px;
+    height: 1px;
+    background: rgb(41, 41, 41);
+    display: block;
+    margin-top: 8px;
+  }
+}
+
 .intro {
   display: block;
-  padding: 50px 25px 80px;
+  padding: 50px 25px 80px 25px;
   text-align: center;
 
   @include desktop {
     width: 940px;
     max-width: 100%;
     margin: 0px auto;
-    padding: 150px 10px;
+    padding: 150px 10px 60px 10px;
     display: flex;
     text-align: left;
     -webkit-box-align: center;
@@ -95,5 +155,22 @@ svg {
     @include desktop {
       padding-left: 30px;
     }
+  }
+}
+
+@-webkit-keyframes flash {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flash {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
   }
 }

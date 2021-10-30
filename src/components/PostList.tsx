@@ -2,45 +2,28 @@ import React from 'react';
 import { PostContent } from '../lib/posts';
 import PostItem from './PostItem';
 import Pagination from './Pagination';
-import TagLink from './TagLink';
-import { TagContent } from '../lib/tags';
 
 type Props = {
   posts: PostContent[];
-  tags: TagContent[];
   pagination: {
     current: number;
     pages: number;
   };
 };
-export default function PostList({ posts, tags, pagination }: Props) {
+export default function PostList({ posts, pagination }: Props) {
   return (
     <>
       <div className="container">
         <section className="section">
-          <h1 className="title">Section</h1>
           <h2 className="subtitle">
-            <strong>Netflify CMS</strong> blows my mind.
+            <b className="under-sub">Latest Posts</b>
           </h2>
-        </section>
-        <section className="section">
-          <div className="columns is-multiline">
-            {posts.map((it, i) => (
+          <div>
+            {posts.slice(0, 3).map((it, i) => (
               <PostItem key={i} post={it} />
             ))}
           </div>
         </section>
-        {/*
-        <div className={'columns'}>
-          <ul className={'categories'}>
-            {tags.map((it, i) => (
-              <li key={i}>
-                <TagLink tag={it} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      */}
       </div>
       <section className="section">
         {pagination.pages > 1 && (

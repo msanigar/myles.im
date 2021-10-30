@@ -50,6 +50,7 @@ collections:
               config:
                 multiple: false
           - label: 'Featured Images'
+            required: false
             name: 'feature_images'
             widget: 'list'
             summary: '{{fields.image}}'
@@ -151,6 +152,7 @@ collections:
             - 'tags.*.name'
           valueField: 'tags.*.slug'
       - label: 'Featured Image'
+        required: false
         name: 'thumbnail'
         widget: 'image'
         choose_url: true

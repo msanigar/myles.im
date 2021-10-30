@@ -17,9 +17,9 @@ export default function Navigation() {
     <>
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <Link href="/about">
+          <Link href="/">
             <a className="navbar-item">
-              <img src="images/logo-light.png" />
+              <img src={'/images/logo-light.png'} />
             </a>
           </Link>
           <a
@@ -39,14 +39,17 @@ export default function Navigation() {
         <div id="navbarBasicExample" className={navClasses}>
           <div className="navbar-start"></div>
           <div className="navbar-end">
+            <Link href="/">
+              <a className="navbar-item">Home</a>
+            </Link>
             <Link href="/about">
               <a className="navbar-item">About</a>
             </Link>
             <Link href="/contact">
               <a className="navbar-item">Contact</a>
             </Link>
-            <Link href="/posts">
-              <a className="navbar-item">Posts</a>
+            <Link href="/work">
+              <a className="navbar-item">Work</a>
             </Link>
           </div>
         </div>

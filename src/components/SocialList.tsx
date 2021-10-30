@@ -8,7 +8,7 @@ import config from '../lib/config';
 export function SocialList({ style }) {
   const theme = style === 'dark' ? '#000' : '#fff';
   return (
-    <div className="socials">
+    <span className="socials">
       <a
         title="Facebook"
         href={`https://twitter.com/${config.twitter_account}`}
@@ -41,6 +41,6 @@ export function SocialList({ style }) {
       >
         <GitHub width={24} height={24} fill={theme} />
       </a>
-    </div>
+    </span>
   );
 }

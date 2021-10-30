@@ -3,7 +3,7 @@
 
 html,
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif !important;
   background-color: #fff;
   color: #222;
   font-weight: 200;

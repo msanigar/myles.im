@@ -2,36 +2,55 @@ import { PostContent } from '../lib/posts';
 import Date from './Date';
 import Link from 'next/link';
 import { parseISO } from 'date-fns';
+import TagLink from './TagLink';
+import { getTag } from '../lib/tags';
 
 type Props = {
   post: PostContent;
 };
 export default function PostItem({ post }: Props) {
+  const truncateString = (string = '', maxLength = 328) =>
+    string.length > maxLength ? `${string.substring(0, maxLength)}…` : string;
   return (
-    <Link href={'/posts/' + post.slug}>
-      <div className="column is-one-third" style={{ cursor: `pointer` }}>
-        <div className="card">
-          <div className="card-image">
-            <figure className="image is-4by3">
-              <img
-                style={{ objectFit: `cover` }}
-                src={post.thumbnail}
-                alt="Placeholder image"
-              />
-            </figure>
-          </div>
-          <div className="card-content">
-            <p className="has-text-weight-bold">{post.title}</p>
-            <div className="content">
-              {post.shortText}
-              <br />
-              <div className="has-text-right	">
+    <article className="media home-post">
+      <figure className="media-left">
+        <p className="image">
+          <img
+            className="shine"
+            style={{ objectFit: `cover` }}
+            src={post.thumbnail}
+            alt="Placeholder image"
+          />{' '}
+        </p>
+      </figure>
+      <div className="media-content">
+        <ul className={'tag-list'}>
+          {post.tags.map((it, i) => (
+            <li key={i}>
+              <TagLink tag={getTag(it)} />
+            </li>
+          ))}
+        </ul>
+        <div className="content">
+          <p>
+            <p className="mb-0 pb-2">
+              <strong>{post.title}</strong>
+              {' - '}
+              <small>
                 <Date date={parseISO(post.date)} />
-              </div>
-            </div>
-          </div>
+              </small>
+            </p>
+            {truncateString(post.shortText)}
+            <p className="pt-2">
+              <Link href={'/posts/' + post.slug}>
+                <a className="has-text-danger">
+                  <b>Read more...</b>
+                </a>
+              </Link>
+            </p>
+          </p>
         </div>
       </div>
-    </Link>
+    </article>
   );
 }

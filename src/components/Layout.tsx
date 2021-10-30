@@ -32,6 +32,16 @@ export default function Layout({ children }: Props) {
             src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
             crossOrigin="anonymous"
           ></script>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="anonymous"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
         <Navigation />
         <main>{children}</main>
