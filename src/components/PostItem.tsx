@@ -33,21 +33,21 @@ export default function PostItem({ post }: Props) {
         </ul>
         <div className="content">
           <p>
-            <p className="mb-0 pb-2">
+            <span className="mb-0 pb-2">
               <strong>{post.title}</strong>
               {' - '}
               <small>
                 <Date date={parseISO(post.date)} />
               </small>
-            </p>
+            </span>
             {truncateString(post.shortText)}
-            <p className="pt-2">
+            <span className="pt-2">
               <Link href={'/posts/' + post.slug}>
                 <a className="has-text-danger">
                   <b>Read more...</b>
                 </a>
               </Link>
-            </p>
+            </span>
           </p>
         </div>
       </div>
