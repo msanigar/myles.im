@@ -2,11 +2,7 @@
   "site_title": "myles.im ~ nextjs ~ netlify ~ typescript",
   "twitter_account": "@msanigar",
   "base_url": "https://myles.im/",
-  "feature_images": [
-    "/images/12015163_767180960077279_4588161264538298053_o.jpeg",
-    "/images/93004719_2559235684299348_2028317418140467200_n.jpeg",
-    "/images/195615068_2910106975878882_8961646285885053791_n.jpeg"
-  ],
+  "feature_images": [],
   "site_keywords": [
     {
       "keyword": "Next.js"
