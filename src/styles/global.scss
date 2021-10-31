@@ -1,4 +1,5 @@
 @import '~bulma/bulma';
+@import '~bulma-timeline';
 @import './mixins.module.scss';
 @import './syntax.module.scss';
 @import './cookies.module.scss';
@@ -28,6 +29,12 @@
 
 main {
   flex: 1;
+}
+
+.work {
+  section {
+    border-bottom: 1px solid rgba(219, 219, 219, 0.5);
+  }
 }
 
 .tag-list {
@@ -64,9 +71,9 @@ main {
 .socials {
   @include desktop {
     svg {
+      transition: all 0.4s ease;
       &:hover {
         transform: translate3D(0, -1px, 0) scale(1.3);
-        transition: all 0.4s ease;
       }
     }
   }
@@ -92,10 +99,12 @@ svg {
 
   @include desktop {
     flex-direction: row;
+    .image {
+      transition: all 0.4s ease-in-out;
+    }
     &:hover {
       .image {
         transform: translate3D(0, -1px, 0) scale(1.03);
-        transition: all 0.4s ease;
         opacity: 1;
         -webkit-animation: flash 1s;
         animation: flash 1s;
@@ -134,11 +143,11 @@ svg {
 .container {
   article.tile {
     cursor: pointer;
+    transition: all 0.4s ease-in-out;
 
     @include desktop {
       &:hover {
         transform: translate3D(0, -1px, 0) scale(1.03);
-        transition: all 0.4s ease;
       }
     }
     a {
