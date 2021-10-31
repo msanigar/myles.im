@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import Cookies from './Cookies';
+import { createCookie, checkCookie } from '../helpers/cookieUtils';
 
 type Props = {
   children: React.ReactNode;
@@ -10,12 +11,12 @@ type Props = {
 export default function Layout({ children }: Props) {
   let dismissed;
   if (typeof window !== 'undefined') {
-    dismissed = sessionStorage.getItem('cookiebanner_dismissed');
+    dismissed = checkCookie('cookiebanner_dismissed');
   }
   const [hidden, setHidden] = useState(false);
   const handleHideBanner = () => {
     if (typeof window !== 'undefined') {
-      sessionStorage.setItem('cookiebanner_dismissed', 'true');
+      createCookie('cookiebanner_dismissed', 'true', 30);
     }
     setHidden(true);
   };

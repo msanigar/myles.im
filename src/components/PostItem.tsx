@@ -16,7 +16,6 @@ export default function PostItem({ post }: Props) {
       <figure className="media-left">
         <p className="image">
           <img
-            className="shine"
             style={{ objectFit: `cover` }}
             src={post.thumbnail}
             alt="Placeholder image"

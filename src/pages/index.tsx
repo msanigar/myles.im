@@ -11,6 +11,11 @@ import { listTags, TagContent } from '../lib/tags';
 import { countPosts, listPostContent, PostContent } from '../lib/posts';
 import PostList from '../components/PostList';
 
+import ReactSvg from '../assets/react.svg';
+import TypescriptSvg from '../assets/typescript.svg';
+import NetlifySvg from '../assets/netlify.svg';
+import BulmaSvg from '../assets/bulma.svg';
+
 type Props = {
   posts: PostContent[];
   tags: TagContent[];
@@ -45,17 +50,21 @@ export default function Index({ posts, tags, pagination }: Props) {
               <h1 className="title">
                 Hey, I'm <b>Myles</b>
               </h1>
-              <h3 className="subtitle">
-                <span className="has-text-danger">Tech Lead</span> &{' '}
-                <span className="has-text-danger">Web Developer</span>
-              </h3>
               <p>
-                I'm a York based <b>Tech Lead</b> at asos.com and{' '}
-                <b>freelance</b> web developer. I'm currently{' '}
-                <span className="has-text-success">
-                  <b>open</b>
-                </span>{' '}
-                for work, so feel free get in touch!
+                I'm a <b>York</b> based{' '}
+                <b className="has-text-danger">Tech Lead</b> currently working
+                for{' '}
+                <a
+                  href="https://asos.com"
+                  target="_blank"
+                  className="has-text-info dotted-underline"
+                >
+                  asos.com
+                </a>
+                . Here you'll find my CV, some project work and a very poorly
+                maintained blog. Occasionally I pick up{' '}
+                <b className="has-text-success">freelance</b> work, so feel free
+                get in touch! ✌️
               </p>
               <SocialList style={'dark'} />
             </div>
@@ -63,7 +72,77 @@ export default function Index({ posts, tags, pagination }: Props) {
         </div>
       </section>
       <section>
-        <PostList posts={posts} pagination={pagination} />
+        <PostList posts={posts} pagination={pagination} home={true} />
+      </section>
+      <section className="pb-6 pt-6">
+        <h2 className="subtitle has-text-centered">
+          This website was built using the following{' '}
+          <strong>
+            <a
+              className="has-text-danger dotted-underline"
+              href="https://www.netlify.com/jamstack"
+              target="_blank"
+            >
+              Jamstack
+            </a>
+          </strong>{' '}
+          technologies.
+        </h2>
+        <nav className="level pt-3">
+          <div className="level-item has-text-centered">
+            <div>
+              <p className="heading">React.js</p>
+              <a
+                title="React.js"
+                href={`https://reactjs.org/`}
+                target="_blank"
+                rel="noopener"
+              >
+                <ReactSvg width={128} height={128} />
+              </a>
+            </div>
+          </div>
+          <div className="level-item has-text-centered">
+            <div>
+              <p className="heading">Netlify</p>
+              <a
+                title="Netlify"
+                href={`https://www.netlify.com/`}
+                target="_blank"
+                rel="noopener"
+              >
+                <NetlifySvg width={128} height={128} />
+              </a>
+            </div>
+          </div>
+          <div className="level-item has-text-centered">
+            <div>
+              <p className="heading">TypeScript</p>
+              <a
+                title="TypeScript"
+                href={`https://www.typescriptlang.org/`}
+                target="_blank"
+                rel="noopener"
+              >
+                <TypescriptSvg width={128} height={128} />
+              </a>
+            </div>
+          </div>
+
+          <div className="level-item has-text-centered">
+            <div>
+              <p className="heading">Bulma CSS</p>
+              <a
+                title="Bulma CSS"
+                href={`https://bulma.io/`}
+                target="_blank"
+                rel="noopener"
+              >
+                <BulmaSvg width={128} height={128} />
+              </a>
+            </div>
+          </div>
+        </nav>
       </section>
     </Layout>
   );
