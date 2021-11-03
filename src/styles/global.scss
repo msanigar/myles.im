@@ -35,6 +35,20 @@ main {
   section {
     border-bottom: 1px solid rgba(219, 219, 219, 0.5);
   }
+  .tile.is-vertical > .tile.is-child:not(:last-child) {
+    margin-bottom: 0 !important;
+
+    @include desktop {
+      margin-bottom: 1.5rem !important;
+    }
+  }
+  .tile.is-parent {
+    padding: 0;
+
+    @include desktop {
+      padding: 0.75rem;
+    }
+  }
 }
 
 .tag-list {
