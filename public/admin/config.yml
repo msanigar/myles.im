@@ -44,6 +44,8 @@ collections:
             name: 'instagram_account'
           - label: 'Facebook account'
             name: 'facebook_account'
+          - label: 'Linkedin account'
+            name: 'linkedin_account'
             widget: 'string'
           - label: 'Header Image'
             name: 'header'

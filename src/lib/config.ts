@@ -10,6 +10,7 @@ type Config = {
   readonly facebook_account: string;
   readonly instagram_account: string;
   readonly github_account: string;
+  readonly linkedin_account: string;
   readonly header: string;
   readonly feature_images: string[] | string;
 };

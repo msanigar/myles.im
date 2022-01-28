@@ -3,6 +3,7 @@ import Facebook from '../assets/facebook-alt.svg';
 import Instagram from '../assets/instagram-alt.svg';
 import Twitter from '../assets/twitter-alt.svg';
 import GitHub from '../assets/github-alt.svg';
+import Linkedin from '../assets/linkedin-alt.svg';
 import config from '../lib/config';
 
 export function SocialList({ style }) {
@@ -40,6 +41,14 @@ export function SocialList({ style }) {
         rel="noopener"
       >
         <GitHub width={24} height={24} fill={theme} />
+      </a>
+      <a
+        title="Linkedin"
+        href={`https://linkedin.com/in/${config.linkedin_account}`}
+        target="_blank"
+        rel="noopener"
+      >
+        <Linkedin width={24} height={24} fill={theme} />
       </a>
     </span>
   );
