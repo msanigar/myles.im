@@ -11,7 +11,7 @@ export function SocialList({ style }) {
     <span className="socials">
       <a
         title="Facebook"
-        href={`https://twitter.com/${config.twitter_account}`}
+        href={`https://facebook.com/${config.facebook_account}`}
         target="_blank"
         rel="noopener"
       >
@@ -19,7 +19,7 @@ export function SocialList({ style }) {
       </a>
       <a
         title="Instagram"
-        href={`https://twitter.com/${config.twitter_account}`}
+        href={`https://instagram.com/${config.instagram_account}`}
         target="_blank"
         rel="noopener"
       >
