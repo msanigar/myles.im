@@ -161,8 +161,8 @@ export default function Index({}: Props) {
             <header className="timeline-header">
               <span className="tag is-info">2020</span>
             </header>
-            <div className="timeline-item">
-              <div className="timeline-marker is-primary is-icon">
+            <div className="timeline-item is-danger">
+              <div className="timeline-marker is-danger is-icon">
                 <i className="fa fa-flag"></i>
               </div>{' '}
               <div className="timeline-content">
