@@ -52,8 +52,8 @@ export default function Index({ posts, tags, pagination }: Props) {
               </h1>
               <p>
                 I'm a <b>York</b> based{' '}
-                <b className="has-text-danger">Tech Lead</b> currently working
-                for{' '}
+                <b className="has-text-danger">Engineering Manager</b> currently
+                working for{' '}
                 <a
                   href="https://asos.com"
                   target="_blank"
