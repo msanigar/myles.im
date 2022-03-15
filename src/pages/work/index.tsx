@@ -139,8 +139,8 @@ export default function Index({}: Props) {
                 <p className="heading">
                   <b>missguided.com</b>
                 </p>
-                <p>Senior Software Engineer</p>
                 <p>Software Engineer</p>
+                <p>Senior Software Engineer</p>
               </div>
             </div>
             <header className="timeline-header">
@@ -154,8 +154,8 @@ export default function Index({}: Props) {
                 <p className="heading">
                   <b>ivendi ltd.</b>
                 </p>
-                <p>Principal Engineer</p>
                 <p>Tech Lead</p>
+                <p>Principal Engineer</p>
               </div>
             </div>
             <header className="timeline-header">
