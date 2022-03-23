@@ -21,11 +21,10 @@ export default function Layout({ children }: Props) {
     }
     setHidden(true);
   };
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      (window as Window)._ALPINA_ID = 'd5e60b06-b746-4b93-9325-f2a3cc7d04f4';
-    }
-  });
+  if (typeof window !== 'undefined') {
+    (window as Window)._ALPINA_ID = 'd5e60b06-b746-4b93-9325-f2a3cc7d04f4';
+  }
+
   return (
     <>
       <div className="root">
