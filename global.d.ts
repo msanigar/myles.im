@@ -17,3 +17,7 @@ declare module '*.yml' {
   const value: any;
   export default value;
 }
+
+interface Window {
+  _ALPINA_ID: any;
+}

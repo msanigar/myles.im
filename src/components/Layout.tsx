@@ -9,14 +9,6 @@ type Props = {
   children: React.ReactNode;
 };
 
-declare global {
-  interface Window {
-    _ALPINA_ID: any;
-  }
-}
-
-window._ALPINA_ID = window._ALPINA_ID || {};
-
 export default function Layout({ children }: Props) {
   let dismissed;
   if (typeof window !== 'undefined') {
@@ -61,7 +53,10 @@ export default function Layout({ children }: Props) {
         <Footer />
       </div>
       <script src="https://x.alpina.io/wa.js" async>
-        {(window._ALPINA_ID = 'd5e60b06-b746-4b93-9325-f2a3cc7d04f4')}
+        {
+          ((window as Window)._ALPINA_ID =
+            'd5e60b06-b746-4b93-9325-f2a3cc7d04f4')
+        }
       </script>
       <script src="https://apps.elfsight.com/p/platform.js" async></script>
     </>
