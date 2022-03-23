@@ -21,6 +21,11 @@ export default function Layout({ children }: Props) {
     }
     setHidden(true);
   };
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      (window as Window)._ALPINA_ID = 'd5e60b06-b746-4b93-9325-f2a3cc7d04f4';
+    }
+  });
   return (
     <>
       <div className="root">
@@ -52,12 +57,7 @@ export default function Layout({ children }: Props) {
         )}
         <Footer />
       </div>
-      <script src="https://x.alpina.io/wa.js" async>
-        {
-          ((window as Window)._ALPINA_ID =
-            'd5e60b06-b746-4b93-9325-f2a3cc7d04f4')
-        }
-      </script>
+      <script src="https://x.alpina.io/wa.js" async></script>
       <script src="https://apps.elfsight.com/p/platform.js" async></script>
     </>
   );
