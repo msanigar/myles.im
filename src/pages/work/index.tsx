@@ -46,7 +46,7 @@ export default function Index({}: Props) {
             </p>
             <p>
               Google fonts, FontAwesome, unDraw illustrations, Unsplash images
-              and Plausible analytics are the cherry on top.
+              and Alpina Web Analytics are the cherry on top.
             </p>
           </div>
         </section>

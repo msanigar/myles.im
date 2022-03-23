@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import Cookies from './Cookies';
 import { createCookie, checkCookie } from '../helpers/cookieUtils';
+import { analyticsHelper } from '../helpers/analytics';
 
 type Props = {
   children: React.ReactNode;
@@ -20,6 +21,9 @@ export default function Layout({ children }: Props) {
     }
     setHidden(true);
   };
+  useEffect(() => {
+    analyticsHelper();
+  });
   return (
     <>
       <div className="root">
@@ -51,11 +55,6 @@ export default function Layout({ children }: Props) {
         )}
         <Footer />
       </div>
-      <script
-        async
-        data-domain="myles.im"
-        src="https://plausible.io/js/plausible.js"
-      ></script>
       <script src="https://apps.elfsight.com/p/platform.js" async></script>
     </>
   );
