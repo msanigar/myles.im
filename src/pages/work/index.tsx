@@ -62,8 +62,9 @@ export default function Index({}: Props) {
             <div className="tile is-vertical is-8">
               <div className="tile">
                 <div className="tile is-parent is-vertical">
-                  <article className="tile is-child notification is-primary"></article>
-                  <article className="tile is-child notification is-warning"></article>
+                  <article className="tile is-child notification is-primary">
+                    Startr2
+                  </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child notification is-info">
@@ -85,14 +86,14 @@ export default function Index({}: Props) {
               </div>
               <div className="tile is-parent">
                 <article className="tile is-child notification is-danger">
-                  <div className="content"></div>
+                  <div className="content">BeadlamTractor</div>
                 </article>
               </div>
             </div>
             <div className="tile is-parent">
               <article className="tile is-child notification is-success">
                 <div className="content">
-                  <div className="content"></div>
+                  <div className="content">Keepr</div>
                 </div>
               </article>
             </div>
