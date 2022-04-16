@@ -75,7 +75,7 @@ export default function Index({}: Props) {
                       <p className="title">Surgo.gg</p>
                       <p className="subtitle">
                         Cancelled project working with ex-pro CSGO player &
-                        caster
+                        caster Alex 'Snodz' Byfield
                       </p>
                       <figure className="image is-4by3">
                         <img src="https://myles.im/images/surgoss.png" />
