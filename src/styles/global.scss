@@ -120,8 +120,6 @@ svg {
       .image {
         transform: translate3D(0, -1px, 0) scale(1.03);
         opacity: 1;
-        -webkit-animation: flash 1s;
-        animation: flash 1s;
       }
     }
   }
@@ -218,22 +216,5 @@ svg {
     @include desktop {
       padding-left: 30px;
     }
-  }
-}
-
-@-webkit-keyframes flash {
-  0% {
-    opacity: 0.4;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes flash {
-  0% {
-    opacity: 0.4;
-  }
-  100% {
-    opacity: 1;
   }
 }
