@@ -59,7 +59,7 @@ export default function Layout({ children }: Props) {
         <Footer />
       </div>
       <script src="https://apps.elfsight.com/p/platform.js" async></script>
-      <script src="https://x.alpina.io/wa.js" async></script>
+      <script src="https://x.alpina.io/wa.js" defer></script>
     </>
   );
 }
