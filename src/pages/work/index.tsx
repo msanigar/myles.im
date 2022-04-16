@@ -62,7 +62,7 @@ export default function Index({}: Props) {
             <div className="tile is-vertical is-8">
               <div className="tile">
                 <div className="tile is-parent is-vertical">
-                  <article className="tile is-child notification is-primary">
+                  <article className="tile is-child notification is-warning">
                     Startr2
                   </article>
                 </div>
