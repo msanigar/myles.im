@@ -80,33 +80,21 @@ export default function Index({}: Props) {
                 <a href="https://github.com/msanigar/keepr" target="_blank">
                   <p className="title">Keepr</p>
                   <p className="subtitle">
-                    MERN stack clone of "Google Keep"; nodets on the backend
+                    MERN stack clone of "Google Keep"; nodejs/ts on the backend
                     utilizing express, mongodb & firebase. React, ts, bulma and
                     context API on the client side, all bundled together with
                     snowpack. <br />
                     <a href="https://github.com/msanigar/keepr" target="_blank">
                       https://github.com/msanigar/keepr
                     </a>
+                    <figure className="image is-4by3">
+                      <img src="/images/keepr.png" />
+                    </figure>
                   </p>
                 </a>
               </article>
             </div>
             <div className="tile is-6 is-vertical is-parent">
-              <article className="tile is-child box notification is-danger">
-                <a href="https://github.com/msanigar/startr2" target="_blank">
-                  <p className="title">Startr2</p>
-                  <p className="subtitle">
-                    Second iteration of a light and modular custom frontend sass
-                    grid/lib, powered by gulp & jquery. <br />
-                    <a
-                      href="https://github.com/msanigar/startr2"
-                      target="_blank"
-                    >
-                      https://github.com/msanigar/startr2
-                    </a>
-                  </p>
-                </a>
-              </article>
               <article className="tile is-child box notification is-success">
                 <a target="_blank" href="https://beadlamtractor.co.uk">
                   <p className="title">Beadlam Tractor Run</p>
@@ -116,6 +104,17 @@ export default function Index({}: Props) {
                   <figure className="image is-4by3">
                     <img src="/images/beadlam.png" />
                   </figure>
+                </a>
+              </article>
+              <article className="tile is-child box notification is-link">
+                <a>
+                  <p className="title">JIPHY</p>
+                  <p className="subtitle">Gif finder, using the GIPHY API</p>
+                </a>
+              </article>
+              <article className="tile is-child box notification is-danger">
+                <a>
+                  <p className="title">Coming Soon™</p>
                 </a>
               </article>
             </div>
