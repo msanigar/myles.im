@@ -58,53 +58,69 @@ export default function Index({}: Props) {
               projects which will be added here upon completion.
             </p>
           </div>
+
           <div className="tile is-ancestor">
-            <div className="tile is-vertical is-8">
-              <div className="tile">
-                <div className="tile is-parent is-vertical">
-                  <article className="tile is-child notification is-warning">
-                    Startr2
-                  </article>
-                </div>
-                <div className="tile is-parent">
-                  <article className="tile is-child notification is-info">
-                    <a
-                      target="_blank"
-                      href="https://eloquent-brattain-42e403.netlify.app/"
-                    >
-                      <p className="title">Surgo.gg</p>
-                      <p className="subtitle">
-                        Cancelled project working with ex-pro CSGO player &
-                        caster Alex 'Snodz' Byfield
-                      </p>
-                      <figure className="image is-4by3">
-                        <img src="https://myles.im/images/surgoss.png" />
-                      </figure>
+            <div className="tile is-6 is-vertical is-parent ">
+              <article className="tile is-child box notification is-info">
+                <a
+                  target="_blank"
+                  href="https://eloquent-brattain-42e403.netlify.app/"
+                >
+                  <p className="title">Surgo.gg</p>
+                  <p className="subtitle">
+                    Cancelled project working with ex-pro CSGO player & caster
+                    Alex 'Snodz' Byfield
+                  </p>
+                  <figure className="image is-4by3">
+                    <img src="/images/surgoss.png" />
+                  </figure>
+                </a>
+              </article>
+              <article className="tile is-child box notification is-warning">
+                <a href="https://github.com/msanigar/keepr" target="_blank">
+                  <p className="title">Keepr</p>
+                  <p className="subtitle">
+                    MERN stack clone of "Google Keep"; nodets on the backend
+                    utilizing express, mongodb & firebase. React, ts, bulma and
+                    context API on the client side, all bundled together with
+                    snowpack. <br />
+                    <a href="https://github.com/msanigar/keepr" target="_blank">
+                      https://github.com/msanigar/keepr
                     </a>
-                  </article>
-                </div>
-              </div>
-              <div className="tile is-parent">
-                <article className="tile is-child notification is-danger">
-                  <div className="content">BeadlamTractor</div>
-                </article>
-              </div>
+                  </p>
+                </a>
+              </article>
             </div>
-            <div className="tile is-parent">
-              <article className="tile is-child notification is-success">
-                <div className="content">
-                  <div className="content">Keepr</div>
-                </div>
+            <div className="tile is-6 is-vertical is-parent">
+              <article className="tile is-child box notification is-danger">
+                <a href="https://github.com/msanigar/startr2" target="_blank">
+                  <p className="title">Startr2</p>
+                  <p className="subtitle">
+                    Second iteration of a light and modular custom frontend sass
+                    grid/lib, powered by gulp & jquery. <br />
+                    <a
+                      href="https://github.com/msanigar/startr2"
+                      target="_blank"
+                    >
+                      https://github.com/msanigar/startr2
+                    </a>
+                  </p>
+                </a>
+              </article>
+              <article className="tile is-child box notification is-success">
+                <a target="_blank" href="https://beadlamtractor.co.uk">
+                  <p className="title">Beadlam Tractor Run</p>
+                  <p className="subtitle">
+                    Beadlam & JMK charity tractor run info site
+                  </p>
+                  <figure className="image is-4by3">
+                    <img src="/images/beadlam.png" />
+                  </figure>
+                </a>
               </article>
             </div>
           </div>
-        </section>
-
-        <section className="pb-6">
-          <div className="content p-4">
-            <h2 className="subtitle">Career</h2>
-          </div>
-          <div className="timeline is-centered">
+          <div className="timeline is-centered" style={{ marginTop: `3rem` }}>
             <header className="timeline-header">
               <span className="tag is-medium is-info">2013</span>
             </header>
@@ -140,8 +156,11 @@ export default function Index({}: Props) {
                 <p className="heading">
                   <b>missguided.com</b>
                 </p>
-                <p>Software Engineer</p>
-                <p>Senior Software Engineer</p>
+                <p>
+                  Software Engineer{' '}
+                  <i className="fas fa-long-arrow-alt-right"></i> Senior
+                  Software Engineer
+                </p>
               </div>
             </div>
             <header className="timeline-header">
@@ -155,8 +174,10 @@ export default function Index({}: Props) {
                 <p className="heading">
                   <b>ivendi ltd.</b>
                 </p>
-                <p>Tech Lead</p>
-                <p>Principal Engineer</p>
+                <p>
+                  Tech Lead <i className="fas fa-long-arrow-alt-right"></i>{' '}
+                  Principal Engineer
+                </p>
               </div>
             </div>
             <header className="timeline-header">
@@ -170,19 +191,10 @@ export default function Index({}: Props) {
                 <p className="heading">
                   <b>asos.com</b>
                 </p>
-                <p>Tech Lead</p>
-              </div>
-            </div>
-            <header className="timeline-header">
-              <span className="tag is-info">2022</span>
-            </header>
-            <div className="timeline-item is-danger">
-              <div className="timeline-marker is-danger"></div>
-              <div className="timeline-content">
-                <p className="heading">
-                  <b>asos.com</b>
+                <p>
+                  Tech Lead <i className="fas fa-long-arrow-alt-right"></i>{' '}
+                  Engineering Manager
                 </p>
-                <p>Engineering Manager</p>
               </div>
             </div>
             <header className="timeline-header">
