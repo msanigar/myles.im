@@ -60,7 +60,7 @@ export default function Index({}: Props) {
           </div>
 
           <div className="tile is-ancestor">
-            <div className="tile is-6 is-vertical is-parent ">
+            <div className="tile is-vertical is-6 is-parent">
               <article className="tile is-child box notification is-info">
                 <a
                   target="_blank"
@@ -84,24 +84,33 @@ export default function Index({}: Props) {
                     utilizing express, mongodb & firebase. React, ts, bulma and
                     context API on the client side, all bundled together with
                     snowpack. <br />
-                    <a href="https://github.com/msanigar/keepr" target="_blank">
-                      https://github.com/msanigar/keepr
-                    </a>
                     <figure className="image is-4by3">
                       <img src="/images/keepr.png" />
                     </figure>
                   </p>
                 </a>
               </article>
+              <article className="tile is-child box notification is-danger">
+                <a
+                  target="_blank"
+                  href="https://animated-starburst-957819.netlify.app/"
+                >
+                  <p className="title">HypeBeast (WIP</p>
+                  <p className="subtitle">Fake sneaker ecom store</p>
+                  <figure className="image is-4by3">
+                    <img src="/images/hypebeast.png" />
+                  </figure>
+                </a>
+              </article>
             </div>
-            <div className="tile is-6 is-vertical is-parent">
+            <div className="tile is-vertical is-6 is-parent">
               <article className="tile is-child box notification is-success">
                 <a target="_blank" href="https://beadlamtractor.co.uk">
                   <p className="title">Beadlam Tractor Run</p>
                   <p className="subtitle">
                     Beadlam & JMK charity tractor run info site
                   </p>
-                  <figure className="image is-4by3">
+                  <figure className="image">
                     <img src="/images/beadlam.png" />
                   </figure>
                 </a>
@@ -113,17 +122,9 @@ export default function Index({}: Props) {
                 >
                   <p className="title">JIPHY</p>
                   <p className="subtitle">Gif finder, using the GIPHY API</p>
-                  <a href="https://github.com/msanigar/jiphy" target="_blank">
-                    https://github.com/msanigar/jiphy
-                  </a>
-                  <figure className="image is-4by3">
+                  <figure className="image">
                     <img src="/images/jiphy.png" />
                   </figure>
-                </a>
-              </article>
-              <article className="tile is-child box notification is-danger">
-                <a>
-                  <p className="title">Coming Soon™</p>
                 </a>
               </article>
             </div>
