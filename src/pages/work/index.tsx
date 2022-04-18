@@ -110,6 +110,12 @@ export default function Index({}: Props) {
                 <a>
                   <p className="title">JIPHY</p>
                   <p className="subtitle">Gif finder, using the GIPHY API</p>
+                  <a href="https://github.com/msanigar/jiphy" target="_blank">
+                    https://github.com/msanigar/jiphy
+                  </a>
+                  <figure className="image is-4by3">
+                    <img src="/images/jiphy.png" />
+                  </figure>
                 </a>
               </article>
               <article className="tile is-child box notification is-danger">
