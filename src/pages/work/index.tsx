@@ -107,7 +107,10 @@ export default function Index({}: Props) {
                 </a>
               </article>
               <article className="tile is-child box notification is-link">
-                <a>
+                <a
+                  target="_blank"
+                  href="https://preeminent-mooncake-acfe87.netlify.app/"
+                >
                   <p className="title">JIPHY</p>
                   <p className="subtitle">Gif finder, using the GIPHY API</p>
                   <a href="https://github.com/msanigar/jiphy" target="_blank">
