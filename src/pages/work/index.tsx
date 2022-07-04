@@ -95,7 +95,7 @@ export default function Index({}: Props) {
                   target="_blank"
                   href="https://animated-starburst-957819.netlify.app/"
                 >
-                  <p className="title">HypeBeast (WIP</p>
+                  <p className="title">HypeBeast (WIP)</p>
                   <p className="subtitle">Fake sneaker ecom store</p>
                   <figure className="image is-4by3">
                     <img src="/images/hypebeast.png" />
