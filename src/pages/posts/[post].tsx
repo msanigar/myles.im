@@ -22,10 +22,9 @@ export type Props = {
   description?: string;
   source: MDXRemoteSerializeResult;
 };
-
 const components = {
-  InstagramEmbed,
-  YouTube,
+  InstagramEmbed: InstagramEmbed,
+  YouTube: YouTube,
   TwitterTweetEmbed,
 };
 const slugToPostContent = ((postContents) => {
