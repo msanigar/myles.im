@@ -34,7 +34,7 @@ export default function Page({}: Props) {
                   height: `420px`,
                 }}
               >
-                <Image src={formattedSrc} layout="fill" objectFit="cover" />
+                <Image src={formattedSrc} alt="foo" layout="fill" objectFit="cover" />
               </div>
             );
           })}
