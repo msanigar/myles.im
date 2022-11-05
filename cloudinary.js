@@ -2,7 +2,7 @@ const fs = require('fs'),
   fetch = require('node-fetch'),
   api = require('./api-creds');
 
-const images = `https://${api.key}:${api.secret}@${api.url}/image?max_results=500`;
+const images = `https://${api.key}:${process.env.CLOUDINARY_SECRET}@${api.url}/image?max_results=500`;
 
 // Cloudinary processing parameters
 const imgParam = 'c_fit,f_auto,h_640,w_640/';
