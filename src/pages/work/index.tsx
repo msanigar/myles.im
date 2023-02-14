@@ -190,7 +190,7 @@ export default function Index({}: Props) {
               </div>
             </div>
             <header className="timeline-header">
-              <span className="tag is-info">2020</span>
+              <span className="tag is-info">2021</span>
             </header>
             <div className="timeline-item is-danger">
               <div className="timeline-marker is-danger is-icon">
