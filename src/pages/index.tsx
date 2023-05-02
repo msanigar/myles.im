@@ -55,11 +55,11 @@ export default function Index({ posts, tags, pagination }: Props) {
                 <b className="has-text-danger">Engineering Manager</b> currently
                 working for{' '}
                 <a
-                  href="https://asos.com"
+                  href="https://doxy.me/"
                   target="_blank"
                   className="has-text-info dotted-underline"
                 >
-                  asos.com
+                  Doxy.me
                 </a>
                 . Here you'll find my CV, some project work and a very poorly
                 maintained blog. Occasionally I pick up{' '}
