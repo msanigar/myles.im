@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
-    "@mapbox/rehype-prism": "^0.8.0",
-    "@svgr/webpack": "^5.5.0",
+    "@mapbox/rehype-prism": "^0.9.0",
+    "@svgr/webpack": "^8.1.0",
     "@types/js-yaml": "^4.0.4",
     "bulma-timeline": "^3.0.4",
     "classnames": "^2.3.1",
@@ -20,7 +20,7 @@
     "embla-carousel-react": "^5.0.1",
     "gray-matter": "^4.0.3",
     "js-yaml": "^4.1.0",
-    "next": "^13.0.2",
+    "next": "^14.2.1",
     "next-mdx-remote": "^4.1.0",
     "normalize.css": "^8.0.1",
     "prettier": "^2.4.1",
@@ -34,7 +34,7 @@
     "schema-dts": "^1.0.0"
   },
   "devDependencies": {
-    "@types/node": "^16.11.6",
+    "@types/node": "^20.12.7",
     "@types/react": "^18.0.1",
     "bulma": "^0.9.3",
     "sass": "^1.43.4",
