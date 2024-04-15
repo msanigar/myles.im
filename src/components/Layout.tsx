@@ -18,14 +18,23 @@ export default function Layout({ children }: Props) {
   const handleHideBanner = () => {
     if (typeof window !== 'undefined') {
       createCookie('cookiebanner_dismissed', 'true', 30);
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = window.gtag || function() { window.dataLayer.push(arguments); };
-      window.gtag('js', new Date());
-      window.gtag('config', 'G-DW5KV1MRHN');
-      new Date();
     }
     setHidden(true);
   };
+
+  useEffect(() => {
+    if (dismissed) {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag =
+        window.gtag ||
+        function () {
+          window.dataLayer.push(arguments);
+        };
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-80HD6ZWWV0');
+      new Date();
+    }
+  }, []);
 
   return (
     <>
@@ -59,8 +68,11 @@ export default function Layout({ children }: Props) {
         <Footer />
       </div>
       <script src="https://apps.elfsight.com/p/platform.js" async></script>
-      
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-DW5KV1MRHN"></script>
+
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-DW5KV1MRHN"
+      ></script>
     </>
   );
 }
