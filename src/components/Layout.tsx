@@ -13,12 +13,16 @@ export default function Layout({ children }: Props) {
   let dismissed;
   if (typeof window !== 'undefined') {
     dismissed = checkCookie('cookiebanner_dismissed');
-    (window as Window)._ALPINA_ID = 'd5e60b06-b746-4b93-9325-f2a3cc7d04f4';
   }
   const [hidden, setHidden] = useState(false);
   const handleHideBanner = () => {
     if (typeof window !== 'undefined') {
       createCookie('cookiebanner_dismissed', 'true', 30);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function() { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-DW5KV1MRHN');
+      new Date();
     }
     setHidden(true);
   };
@@ -55,7 +59,8 @@ export default function Layout({ children }: Props) {
         <Footer />
       </div>
       <script src="https://apps.elfsight.com/p/platform.js" async></script>
-      <script src="https://x.alpina.io/wa.js" defer></script>
+      
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-DW5KV1MRHN"></script>
     </>
   );
 }

@@ -19,5 +19,6 @@ declare module '*.yml' {
 }
 
 interface Window {
-  _ALPINA_ID: any;
+  dataLayer: any;
+  gtag: any;
 }
