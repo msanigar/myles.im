@@ -17,10 +17,8 @@ export default function Navigation() {
     <>
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <Link href="/">
-            <a className="navbar-item">
-              <img src={'/images/logo-light.png'} />
-            </a>
+          <Link href="/" className="navbar-item">
+            <img src={'/images/logo-light.png'} />
           </Link>
           <a
             role="button"
@@ -39,17 +37,17 @@ export default function Navigation() {
         <div id="navbarBasicExample" className={navClasses}>
           <div className="navbar-start"></div>
           <div className="navbar-end">
-            <Link href="/">
-              <a className="navbar-item">Home</a>
+            <Link href="/" className="navbar-item">
+              Home
             </Link>
-            <Link href="/work">
-              <a className="navbar-item">Work</a>
+            <Link href="/work" className="navbar-item">
+              Work
             </Link>
-            <Link href="/posts">
-              <a className="navbar-item">Posts</a>
+            <Link href="/posts" className="navbar-item">
+              Posts
             </Link>
-            <Link href="/contact">
-              <a className="navbar-item">Contact</a>
+            <Link href="/contact" className="navbar-item">
+              Contact
             </Link>
           </div>
         </div>

@@ -10,6 +10,10 @@ import data from '../../../images.json';
 
 type Props = {};
 export default function Page({}: Props) {
+  const loaderProp = ({ src }) => {
+    return src;
+  };
+
   const url = `/archive`;
   const title = 'Archive';
   return (
@@ -34,7 +38,13 @@ export default function Page({}: Props) {
                   height: `420px`,
                 }}
               >
-                <Image src={formattedSrc} alt="foo" layout="fill" objectFit="cover" />
+                <Image
+                  src={formattedSrc}
+                  alt="foo"
+                  layout="fill"
+                  objectFit="cover"
+                  loader={loaderProp}
+                />
               </div>
             );
           })}

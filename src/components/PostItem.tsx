@@ -43,10 +43,8 @@ export default function PostItem({ post }: Props) {
               {truncateString(post.shortText)}
             </div>
             <div className="block mb-0 pb-2">
-              <Link href={'/posts/' + post.slug}>
-                <a className="has-text-danger">
-                  <b>Read more...</b>
-                </a>
+              <Link href={'/posts/' + post.slug} className="has-text-danger">
+                <b>Read more...</b>
               </Link>
             </div>
           </p>
