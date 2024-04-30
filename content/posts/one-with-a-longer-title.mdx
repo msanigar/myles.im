@@ -1,12 +1,106 @@
 ---
-slug: one-with-a-longer-title
-title: Looooong title
-date: 2021-10-30
+slug: migrating-to-the-jamstack
+title: Migrating to the JAM Stack
+date: 2021-10-16
 author: myles
 tags:
   - netlify
-thumbnail: /images/kalen-emsley-photo-1464822759023-fed622ff2c3b.jpg
-shortText: Quite a long title, one that we'll probably need to truncate. No idea
-  what a reasonable length is yet.
+  - nextjs
+  - react
+thumbnail: https://jamstack.org/img/logo/svg/Jamstack_Logo_DarkBG.svg
+shortText: Migrating from WordPress Headless CMS & React to a Netlify-powered
+  Next.js Jamstack/Serverless MERN Stack Application
 ---
-Quite a long title, one that we'll probably need to truncate. No idea what a reasonable length is yet.
+## Introduction
+
+As a Web Developer, you've likely encountered various technologies for building and deploying web applications. Two popular approaches are WordPress headless CMS with something like React powering the front-end and, the Jamstack using Next.js on Netlify with something like a MERN stack backend. In this blog post, we'll discuss the pros and cons of migrating from a WordPress headless CMS to a Netlify-powered Next.js Jamstack/Serverless application. We'll also explore the specifics of tooling and ease of development.
+
+### Overview of the existing WordPress Headless CMS & React Setup
+
+WordPress has long been a popular choice for content management, offering an easy-to-use interface for non-technical users. By using WordPress as a headless CMS and pairing it with a modern front-end framework like React, developers can take advantage of the powerful content management features while creating a fast, responsive user interface.
+
+Pros:
+
+* Familiarity with the WordPress ecosystem
+* Extensive plugin library
+* Easy content management for non-technical users
+
+Cons:
+
+* Performance can be limited due to server-side rendering
+* Potential security vulnerabilities with plugins
+* Requires separate hosting and server management
+
+\-﻿--
+
+The Jamstack (JavaScript, APIs, and Markup) architecture is gaining popularity for its ability to deliver highly performant, scalable, and secure web applications. The key components of a typical Jamstack application include:
+
+* Next.js: A modern React framework offering both static site generation (SSG) and server-side rendering (SSR)
+* Netlify: A platform for deploying and hosting Jamstack applications with built-in Continuous Deployment (CD)
+* MongoDB:
+* Express: A minimal and flexible Node.js web application framework for building APIs
+
+Pros:
+
+* Improved performance with static site generation
+* Enhanced security through serverless architecture
+* Simplified deployment and hosting with Netlify
+* Flexible data storage with MongoDB
+
+Cons:
+
+* Steeper learning curve for new technologies
+* Less extensive plugin library compared to WordPress
+* Reliance on third-party APIs for some functionality
+
+### Migrating Content from WordPress to the Jamstack
+
+Migrating content from a WordPress headless CMS to a Jamstack application typically involves the following steps:
+
+* Exporting content from WordPress (as JSON or XML)
+* Parsing and transforming the content to match the new data structure
+* Importing the transformed content into the new data store (e.g., MongoDB)
+
+Several tools and libraries are available to facilitate this process, including the **`wp-export`** CLI tool, the **`wordpress-export-parser`** library, and various content migration services.
+
+### Building the Front-End with Next.js
+
+Developers familiar with React will find Next.js relatively easy to learn. Key concepts include:
+
+* File-based routing: Automatic routing based on the file structure in the **`pages`** directory
+* Static site generation (SSG) and server-side rendering (SSR): Build-time and request-time rendering options for improved performance
+* API routes: Built-in support for creating serverless API endpoints
+* CSS modules and global styles: Scoped and global styling options for components
+
+1. Backend API and Database
+
+Express and MongoDB form the backend of the serverless MERN stack. The setup is straightforward, with the API endpoints built using Express and hosted on serverless functions through Netlify Functions. MongoDB Atlas, a fully managed MongoDB database service, can be used to store application data in the cloud.
+
+### Deployment and Hosting with Netlify
+
+Netlify simplifies the deployment process, providing a seamless hosting solution for Next.js applications. Some advantages of using Netlify for deployment and hosting include:
+
+* Continuous Deployment: Netlify automatically builds and deploys your application whenever you push changes to your Git repository (e.g., GitHub, GitLab, Bitbucket)
+* Serverless Functions: Netlify Functions simplifies the management and deployment of serverless APIs, allowing you to write and deploy serverless functions directly within your Next.js application
+* Custom Domains and SSL: Easily configure custom domains and obtain free SSL certificates with Let's Encrypt
+* Preview Deployments: Netlify generates deploy previews for each pull request, allowing you to test changes before merging them into the main branch
+
+To deploy your Next.js application on Netlify, follow these steps:
+
+1. Push your application code to a Git repository.
+2. Sign up for a Netlify account and connect your Git repository.
+3. Configure your build settings, specifying the build command (**`next build`**) and the output directory (**`out`**).
+4. Deploy your application by clicking the "Deploy" button.
+
+### Conclusion
+
+Migrating from a WordPress headless CMS & React application to a Netlify-powered Next.js Jamstack/Serverless MERN stack application can offer several benefits, including improved performance, enhanced security, and simplified deployment and hosting. While the migration process may involve a learning curve and some additional development work, the long-term advantages can make the transition worthwhile for many web applications.
+
+In summary, the key steps for migration include:
+
+* Migrating content from WordPress to the new data store (e.g., MongoDB)
+* Building the front-end with Next.js, leveraging its built-in features
+* Creating serverless APIs using Express and Netlify Functions
+* Deploying and hosting the application on Netlify
+
+By carefully planning the migration and leveraging the tools and technologies available, you can create a modern, scalable, and performant web application that meets your users' needs and expectations.
