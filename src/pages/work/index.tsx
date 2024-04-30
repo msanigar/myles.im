@@ -98,6 +98,22 @@ export default function Index({}: Props) {
                   </figure>
                 </a>
               </article>
+              <article className="tile is-child box notification is-success">
+                <a
+                  target="_blank"
+                  href="https://sage-scone-14ab78.netlify.app/"
+                >
+                  <p className="title">Tech Radar</p>
+                  <p className="subtitle">
+                    A JAMStack application with the primary purpose of measuring
+                    web dev sentiment across a range of technologies, tooling,
+                    methodologies and processes
+                  </p>
+                  <figure className="image">
+                    <img src="/images/radar.png" />
+                  </figure>
+                </a>
+              </article>
             </div>
             <div className="tile is-vertical is-6 is-parent">
               <article className="tile is-child box notification is-success">
@@ -149,22 +165,6 @@ export default function Index({}: Props) {
                   </p>
                   <figure className="image">
                     <img src="/images/redox.png" />
-                  </figure>
-                </a>
-              </article>
-              <article className="tile is-child box notification is-success">
-                <a
-                  target="_blank"
-                  href="https://sage-scone-14ab78.netlify.app/"
-                >
-                  <p className="title">Tech Radar</p>
-                  <p className="subtitle">
-                    A JAMStack application with the primary purpose of measuring
-                    web dev sentiment across a range of technologies, tooling,
-                    methodologies and processes
-                  </p>
-                  <figure className="image">
-                    <img src="/images/radar.png" />
                   </figure>
                 </a>
               </article>
