@@ -1,0 +1,146 @@
+---
+slug: netlify-functions
+title: Netlify Functions
+date: 2022-11-29
+author: myles
+tags:
+  - netlify
+thumbnail: https://remoteworksource.com/wp-content/uploads/2022/01/Netlify.jpg
+shortText: (also known as lambdas)
+---
+Netlify functions (also known as lambdas) are serverless functions that can be easily integrated into your Next.js application. They allow you to create server-side code that runs on-demand, providing an easy way to add functionality to your application without having to manage a full server or infrastructure. In this blog post, we will explore how to create Netlify functions to interface with MongoDB, using a React.js Todo List as an example.
+
+Prerequisites Before we get started, make sure you have the following installed on your machine:
+
+* Node.js and NPM
+* MongoDB
+* Netlify CLI
+
+### Getting Started with Netlify
+
+1. Sign up for a Netlify account at `https://app.netlify.com/signup﻿
+2. Once you've signed up, click the "New site from Git" button on your Netlify dashboard.
+3. Choose the Git provider where your project's repository is hosted (such as GitHub, GitLab, or Bitbucket).
+4. Authorize Netlify to access your Git provider account and select the repository you want to deploy.
+5. Choose your preferred branch to deploy and set your build command and publish directory if necessary. For example, if you're using Next.js, your build command might be **`npm run build`** and your publish directory might be **`out`**.
+6. Click the "Deploy site" button to deploy your site.
+
+### Connecting to a GitHub Repo to Netlify
+
+1. In your Netlify dashboard, click the "New site from Git" button.
+2. Choose GitHub as your Git provider.
+3. Authorize Netlify to access your GitHub account.
+4. Select the repository you want to deploy.
+5. Choose your preferred branch to deploy and set your build command and publish directory if necessary.
+6. Click the "Deploy site" button to deploy your site.
+
+### Setting Up MongoDB Atlas
+
+First, let's set up a MongoDB Atlas account. Head over to \*\*<https://www.mongodb.com/cloud/atlas**> and sign up for a free account. Once you've signed up, follow these steps to create a new MongoDB Atlas cluster:
+
+1. Click the "Build a Cluster" button on the MongoDB Atlas dashboard.
+2. Choose a cloud provider and region for your cluster. For this example, we'll choose the "AWS" provider and the "US East (N. Virginia)" region.
+3. Choose a cluster tier. For this example, we'll choose the "M0 Sandbox" tier, which is a free cluster that provides 512 MB of storage.
+4. Choose any additional settings you'd like to configure for your cluster (such as backup options or network access). For this example, we'll leave the default settings.
+5. Click the "Create Cluster" button to create your cluster. This may take a few minutes to complete.
+
+Once your cluster is created, you can create a new database and a collection to store the Todo list items. Follow these steps to create a new database:
+
+1. Click the "Collections" tab in your cluster dashboard.
+2. Click the "Add My Own Data" button to create a new database.
+3. Choose a name for your database (such as "todo_list").
+4. Choose a collection name (such as "items").
+5. Click the "Create" button to create your database and collection.
+
+### Creating the Netlify Function
+
+Next, let's create a Netlify function that will interface with our MongoDB Atlas database. Create a new file called **`getItems.js`** in your Netlify functions directory (**`/functions`**), and add the following code:
+
+```
+const { MongoClient } = require('mongodb');
+
+exports.handler = async (event, context) => {
+  const client = new MongoClient(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  await client.connect();
+
+  const db = client.db('todo_list');
+  const items = await db.collection('items').find().toArray();
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify(items),
+  };
+};
+```
+
+This function connects to your MongoDB Atlas cluster and retrieves all items from the **`items`** collection. Note that we are using environment variables to store the MongoDB URI. Make sure to set the **`MONGODB_URI`** environment variable in your Netlify dashboard (under Site settings > Build & deploy > Environment). You can find the MongoDB URI for your Atlas cluster by clicking the "Connect" button in your cluster dashboard and choosing "Connect Your Application".
+
+### Integrating with Next.js
+
+Now that we have our Netlify function, we need to integrate it with our Next.js application. Create a new file called **`index.js`** in your pages directory (**`/pages`**), and add the following code:
+
+```
+import React, { useState, useEffect } from 'react';
+
+function HomePage() {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch('/.netlify/functions/getItems')
+      .then((response) => response.json())
+      .then((data) => setItems(data));
+  }, []);
+
+  return (
+    <div>
+      <h1>Todo List</h1>
+      <ul>
+        {items.map((item) => (
+          <li key={item._id}>{item.text}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default HomePage;
+```
+
+This code uses the **`fetch`** API to retrieve the items from our Netlify function, and then renders them in a list
+
+### Deploying to Netlify
+
+Finally, we need to deploy our application to Netlify.
+
+Via CLI: Commit your code to a Git repository (or create a new one), and then run the following commands:
+
+```
+npm install netlify-cli -g
+netlify login
+netlify init
+netlify deploy
+```
+
+Follow the prompts to configure your deployment, and then wait for it to complete. Once the deployment is finished, you should be able to view your application at the URL provided by Netlify.
+
+#### Deploying via the Web Portal
+
+1. In your Netlify dashboard, click the "New site from Git" button.
+2. Choose your preferred Git provider.
+3. Select the repository you want to deploy.
+4. Choose your preferred branch to deploy and set your build command and publish directory if necessary.
+5. Click the "Deploy site" button to deploy your site.
+6. Once your site is deployed, you can configure additional settings such as custom domains, SSL certificates, and environment variables by clicking on your site in the Netlify dashboard.
+
+### Conclusion
+
+In this blog post, we explored how to create Netlify functions to interface with MongoDB, using a React.js Todo List as an example. We created a Netlify function that connects to a MongoDB database and retrieves all items from a collection, and then integrated it with a Next.js application to render the items in a list.
+
+This is just a simple example of what you can do with Netlify functions and MongoDB. With this setup, you can easily add new items to the Todo list, update existing items, or delete items, all using serverless functions.
+
+Remember that Netlify functions are meant for lightweight operations, so it's important to keep them simple and fast. If you need to perform more complex operations, consider using a dedicated server or service instead.
+
+I hope you found this blog post helpful in getting started with Netlify functions and MongoDB. Happy coding!
