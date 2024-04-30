@@ -61,22 +61,18 @@ export default function Index({}: Props) {
 
           <div className="tile is-ancestor">
             <div className="tile is-vertical is-6 is-parent">
-              <article className="tile is-child box notification is-info">
-                <a
-                  target="_blank"
-                  href="https://eloquent-brattain-42e403.netlify.app/"
-                >
-                  <p className="title">Surgo.gg</p>
+              <article className="tile is-child box notification is-warning">
+                <a target="_blank" href="https://beadlamtractor.co.uk">
+                  <p className="title">Beadlam Tractor Run</p>
                   <p className="subtitle">
-                    Cancelled project working with ex-pro CSGO player & caster
-                    Alex 'Snodz' Byfield
+                    Beadlam & JMK charity tractor run info site
                   </p>
-                  <figure className="image is-4by3">
-                    <img src="/images/surgoss.png" />
+                  <figure className="image">
+                    <img src="/images/beadlam.png" />
                   </figure>
                 </a>
               </article>
-              <article className="tile is-child box notification is-warning">
+              <article className="tile is-child box notification is-primary">
                 <a href="https://github.com/msanigar/keepr" target="_blank">
                   <p className="title">Keepr</p>
                   <p className="subtitle">
@@ -90,7 +86,7 @@ export default function Index({}: Props) {
                   </p>
                 </a>
               </article>
-              <article className="tile is-child box notification is-danger">
+              <article className="tile is-child box notification is-info">
                 <a
                   target="_blank"
                   href="https://animated-starburst-957819.netlify.app/"
@@ -105,17 +101,35 @@ export default function Index({}: Props) {
             </div>
             <div className="tile is-vertical is-6 is-parent">
               <article className="tile is-child box notification is-success">
-                <a target="_blank" href="https://beadlamtractor.co.uk">
-                  <p className="title">Beadlam Tractor Run</p>
+                <a
+                  target="_blank"
+                  href="https://dulcet-praline-9a2f6a.netlify.app/"
+                >
+                  <p className="title">CommuniQ</p>
                   <p className="subtitle">
-                    Beadlam & JMK charity tractor run info site
+                    Agora WebRTC and RTM powered video chat app
                   </p>
                   <figure className="image">
-                    <img src="/images/beadlam.png" />
+                    <img src="/images/communiq.png" />
                   </figure>
                 </a>
               </article>
               <article className="tile is-child box notification is-link">
+                <a
+                  target="_blank"
+                  href="https://eloquent-brattain-42e403.netlify.app/"
+                >
+                  <p className="title">Surgo.gg</p>
+                  <p className="subtitle">
+                    Cancelled project working with ex-pro CSGO player & caster
+                    Alex 'Snodz' Byfield
+                  </p>
+                  <figure className="image is-4by3">
+                    <img src="/images/surgoss.png" />
+                  </figure>
+                </a>
+              </article>
+              <article className="tile is-child box notification is-danger">
                 <a
                   target="_blank"
                   href="https://preeminent-mooncake-acfe87.netlify.app/"
@@ -217,9 +231,7 @@ export default function Index({}: Props) {
                 <p className="heading">
                   <b>Doxy.me</b>
                 </p>
-                <p>
-                  Engineering Manager
-                </p>
+                <p>Engineering Manager</p>
               </div>
             </div>
             <header className="timeline-header">
