@@ -132,6 +132,9 @@ svg {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    max-width: 150px;
+    height: auto;
+    
 
     @include desktop {
       height: 170px;
