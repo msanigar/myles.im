@@ -141,6 +141,17 @@ export default function Index({}: Props) {
                   </figure>
                 </a>
               </article>
+              <article className="tile is-child box notification is-info">
+                <a target="_blank" href="https://rust-redox.co.uk/">
+                  <p className="title">Rust-Redox</p>
+                  <p className="subtitle">
+                    Simple static HTML & CSS website for my Rust gaming server
+                  </p>
+                  <figure className="image">
+                    <img src="/images/redox.png" />
+                  </figure>
+                </a>
+              </article>
             </div>
           </div>
           <div className="timeline is-centered" style={{ marginTop: `3rem` }}>
