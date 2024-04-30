@@ -122,6 +122,10 @@
   margin: 0;
 }
 
+.content ul {
+  list-style: disc;
+}
+
 .content abbr[title] {
   text-decoration: underline double;
 }
@@ -145,4 +149,14 @@
   .content h2::before {
     display: block;
   }
+}
+
+.content h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.content h3 {
+  font-size: 1.25em;
+  font-weight: 700;
 }
