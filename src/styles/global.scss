@@ -226,3 +226,15 @@ svg {
     }
   }
 }
+
+// intake form fixes
+.control label {
+  display: block;
+  .radio+.radio {
+      margin-left: 0;
+  }
+}
+
+.control input {
+  margin-right: 5px;
+}

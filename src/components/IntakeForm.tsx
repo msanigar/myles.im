@@ -3,17 +3,32 @@ import { useForm } from 'react-hook-form';
 import classNames from 'classnames';
 import Notification from './Notification'; // Assuming Notification is suitable for displaying submission feedback
 
-export default function IntakeForm() {
+type Props = {};
+
+export default function IntakeForm({}: Props) {
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm();
-
+  const RequiredELm = ({ prop }) => (
+    <p className="help is-danger">Please enter a valid {prop}</p>
+  );
   const [show, setShow] = useState(false);
   const [error, setError] = useState(false);
-
+  const nameClasses = classNames({
+    input: true,
+    'is-danger': errors.name,
+  });
+  const emailClasses = classNames({
+    input: true,
+    'is-danger': errors.email,
+  });
+  const textClasses = classNames({
+    textarea: true,
+    'is-danger': errors.text,
+  });
   const encode = (data) => {
     return Object.keys(data)
       .map(
@@ -21,18 +36,12 @@ export default function IntakeForm() {
       )
       .join('&');
   };
-
   const clearShow = () => {
     setTimeout(() => {
       setError(false);
       setShow(false);
     }, 5000);
   };
-
-  const RequiredELm = ({ prop }) => (
-    <p className="help is-danger">Please enter a valid {prop}</p>
-  );
-
   const onSubmit = (data, e) => {
     e.preventDefault();
     fetch('/', {
@@ -44,6 +53,7 @@ export default function IntakeForm() {
       }),
     })
       .then((response) => {
+        console.log(response);
         setShow(true);
         reset();
         clearShow();
@@ -72,7 +82,7 @@ export default function IntakeForm() {
           <label className="label">Full Name</label>
           <div className="control">
             <input
-              className={classNames('input', { 'is-danger': errors.name })}
+              className={nameClasses}
               type="text"
               {...register('name', { required: 'Full name is required' })}
             />
@@ -84,7 +94,7 @@ export default function IntakeForm() {
           <label className="label">Email Address</label>
           <div className="control">
             <input
-              className={classNames('input', { 'is-danger': errors.email })}
+              className={emailClasses}
               type="email"
               {...register('email', { required: 'Email is required' })}
             />
@@ -187,10 +197,36 @@ export default function IntakeForm() {
           </label>
           <div className="control">
             <textarea
-              className={classNames('textarea', {
-                'is-danger': errors.designPreferences,
-              })}
+              className={textClasses}
               {...register('designPreferences')}
+            ></textarea>
+          </div>
+        </div>
+
+        {/* Target Audience */}
+        <div className="field">
+          <label className="label">
+            Describe your target audience. (Who are they? What are their typical
+            characteristics?):
+          </label>
+          <div className="control">
+            <textarea
+              className={textClasses}
+              {...register('targetAudience')}
+            ></textarea>
+          </div>
+        </div>
+
+        {/* Inspiration */}
+        <div className="field">
+          <label className="label">
+            Are there any websites you like and why? (Please provide URLs and
+            specific elements you like):
+          </label>
+          <div className="control">
+            <textarea
+              className={textClasses}
+              {...register('inspirationWebsites')}
             ></textarea>
           </div>
         </div>
@@ -324,9 +360,7 @@ export default function IntakeForm() {
           </label>
           <div className="control">
             <textarea
-              className={classNames('textarea', {
-                'is-danger': errors.siteManagement,
-              })}
+              className={textClasses}
               {...register('siteManagement')}
             ></textarea>
           </div>
@@ -353,9 +387,7 @@ export default function IntakeForm() {
           <label className="label">Additional Notes</label>
           <div className="control">
             <textarea
-              className={classNames('textarea', {
-                'is-danger': errors.additionalNotes,
-              })}
+              className={textClasses}
               {...register('additionalNotes')}
             ></textarea>
           </div>

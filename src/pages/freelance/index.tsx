@@ -7,7 +7,7 @@ import IntakeForm from '../../components/IntakeForm';
 type Props = {};
 export default function Index({}: Props) {
   const url = '/freelance';
-  const title = 'Work with me!';
+  const title = 'Work with me';
   return (
     <Layout>
       <BasicMeta url={url} title={title} />
@@ -17,7 +17,7 @@ export default function Index({}: Props) {
         <div className="columns is-centered">
           <div className="column is-half">
             <section className="section">
-              <h1 className="title">Work With Me!</h1>
+              <h1 className="title">Work with me</h1>
               <h2 className="subtitle">
                 <strong>Hey!</strong> If you're here, I've asked you to fill out
                 this form so that we might work together...

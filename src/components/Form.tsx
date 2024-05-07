@@ -28,13 +28,13 @@ export default function Form({}: Props) {
     textarea: true,
     'is-danger': errors.text,
   });
-  function encode(data) {
+  const encode = (data) => {
     return Object.keys(data)
       .map(
         (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
       )
       .join('&');
-  }
+  };
   const clearShow = () => {
     setTimeout(() => {
       setError(false);
