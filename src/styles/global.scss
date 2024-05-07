@@ -238,3 +238,7 @@ svg {
 .control input {
   margin-right: 5px;
 }
+
+.control .radio+.radio {
+  margin-left: 0;
+}
