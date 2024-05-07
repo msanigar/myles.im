@@ -62,7 +62,7 @@ export default function PostLayout({
         author={authorName}
         description={description}
       />
-      <div className={'container'}>
+      <div className={'container blog-post'}>
         <article className="block">
           <header className="postlist-heads">
             <h1>{title}</h1>
@@ -70,17 +70,17 @@ export default function PostLayout({
               <div>
                 <Date date={date} />
               </div>
-              {/* <div>
+              <div>
                 <Author author={getAuthor(author)} />
-              </div> */}
+              </div>
             </div>
-            {/* <ul className={'tag-list'}>
+            <ul className={'tag-list'}>
               {tags.map((it, i) => (
                 <li key={i}>
                   <TagButton tag={getTag(it)} />
                 </li>
               ))}
-              </ul> */}
+            </ul>
           </header>
           <div className={styles.content}>{children}</div>
         </article>

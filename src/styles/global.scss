@@ -171,6 +171,11 @@ svg {
   }
 }
 
+.container.blog-post {
+  margin-bottom: 2em;
+  padding: 0 2em;
+}
+
 .under-sub {
   &:after {
     content: '';
