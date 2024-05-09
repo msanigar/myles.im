@@ -193,7 +193,7 @@ export default function IntakeForm({}: Props) {
         {/* Design Preferences */}
         <div className="field">
           <label className="label">
-            Do you have specific design preferences? (Colors, style)
+            Do you have specific design preferences? (Colors, style, fonts)
           </label>
           <div className="control">
             <textarea
@@ -203,11 +203,24 @@ export default function IntakeForm({}: Props) {
           </div>
         </div>
 
+        <div className="field">
+          <label className="label">
+            Do you have a particular preference on single-page, multi-page,
+            parallax layout?
+          </label>
+          <div className="control">
+            <textarea
+              className={textClasses}
+              {...register('layoutPreferences')}
+            ></textarea>
+          </div>
+        </div>
+
         {/* Target Audience */}
         <div className="field">
           <label className="label">
             Describe your target audience. (Who are they? What are their typical
-            characteristics?):
+            characteristics? why will they visit your website?):
           </label>
           <div className="control">
             <textarea
@@ -234,7 +247,8 @@ export default function IntakeForm({}: Props) {
         {/* Content Requirements */}
         <div className="field">
           <label className="label">
-            Will you provide the content for the website? (Text, images, videos)
+            Will you provide the content for the website? (Text, images, videos,
+            info-graphics etc.)
           </label>
           <div className="control">
             <label className="radio">
@@ -284,7 +298,7 @@ export default function IntakeForm({}: Props) {
                 {...register('features')}
                 value="shoppingCart"
               />
-              Shopping cart
+              Shopping cart / checkout / products for purchase
             </label>
             <label className="checkbox">
               <input
@@ -301,6 +315,14 @@ export default function IntakeForm({}: Props) {
                 value="membershipRegistration"
               />
               Membership/Registration
+            </label>
+            <label className="checkbox">
+              <input
+                type="checkbox"
+                {...register('features')}
+                value="blogFunctionality"
+              />
+              A blog
             </label>
             <label className="checkbox">
               <input
@@ -356,7 +378,8 @@ export default function IntakeForm({}: Props) {
 
         <div className="field">
           <label className="label">
-            How do you plan to manage your site after it's built?
+            How do you plan to manage your site after it's built? Do you need
+            the ability to make regular updates/changes?
           </label>
           <div className="control">
             <textarea

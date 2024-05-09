@@ -3,6 +3,7 @@ import BasicMeta from '../../components/meta/BasicMeta';
 import OpenGraphMeta from '../../components/meta/OpenGraphMeta';
 import TwitterCardMeta from '../../components/meta/TwitterCardMeta';
 import Form from '../../components/Form';
+import Link from 'next/link';
 
 type Props = {};
 export default function Index({}: Props) {
@@ -23,6 +24,9 @@ export default function Index({}: Props) {
               </h2>
             </section>
             <Form />
+            <Link className="has-text-danger" href="/freelance">
+              Want to hire me? let's chat!
+            </Link>
           </div>
         </div>
       </div>

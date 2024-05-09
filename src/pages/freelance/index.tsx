@@ -20,7 +20,8 @@ export default function Index({}: Props) {
               <h1 className="title">Work with me</h1>
               <h2 className="subtitle">
                 <strong>Hey!</strong> If you're here, I've asked you to fill out
-                this form so that we might work together...
+                this form so that we might work together. Or, you've stumbled
+                across it in the hopes of hiring a freelance developer.
               </h2>
             </section>
             <IntakeForm />
