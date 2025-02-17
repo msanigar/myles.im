@@ -269,7 +269,6 @@ export default function Index({}: Props) {
                 <i className="fa fa-flag"></i>
               </div>{' '}
               <div className="timeline-content">
-              <i className="fas fa-long-arrow-alt-right"></i>{' '}
                 <p>Senior Engineering Manager</p>
               </div>
             </div>
