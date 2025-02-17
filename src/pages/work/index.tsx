@@ -250,6 +250,20 @@ export default function Index({}: Props) {
             <header className="timeline-header">
               <span className="tag is-info">2023</span>
             </header>
+            <div className="timeline-item is-primary">
+              <div className="timeline-marker is-primary is-icon">
+                <i className="fa fa-flag"></i>
+              </div>{' '}
+              <div className="timeline-content">
+                <p className="heading">
+                  <b>Doxy.me</b>
+                </p>
+                <p>Engineering Manager</p>
+              </div>
+            </div>
+            <header className="timeline-header">
+              <span className="tag is-info">2025</span>
+            </header>
             <div className="timeline-item is-danger">
               <div className="timeline-marker is-danger is-icon">
                 <i className="fa fa-flag"></i>
@@ -258,7 +272,7 @@ export default function Index({}: Props) {
                 <p className="heading">
                   <b>Doxy.me</b>
                 </p>
-                <p>Engineering Manager</p>
+                <p>Senior Engineering Manager</p>
               </div>
             </div>
             <header className="timeline-header">
