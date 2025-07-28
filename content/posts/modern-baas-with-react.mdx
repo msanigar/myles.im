@@ -1,0 +1,217 @@
+---
+
+slug: modern-baas-with-react
+title: Leveraging Modern BaaS with React
+date: 2025-07-28
+author: myles
+tags:
+
+* react
+* convex
+* supabase
+* baas
+* clerk
+* netlify
+  thumbnail: [https://avatars.githubusercontent.com/u/87643984?s=200\&v=4](https://avatars.githubusercontent.com/u/87643984?s=200&v=4)
+  shortText: How Backend-as-a-Service platforms like Convex, Supabase, and Clerk enable frontend developers to ship full-stack experiences faster.
+
+---
+
+## Introduction
+
+Backend-as-a-Service (BaaS) platforms have come a long way since the early days of Firebase. Today, tools like **Convex**, **Supabase**, and **Clerk** enable frontend developers to build and deploy full-stack apps with minimal backend setup. This post explores what modern BaaS tools are, how they integrate with frontend stacks like React 19 and Vite, and how to deploy these apps with tools like **Netlify**.
+
+Rather than diving deep into one project, we’ll look at practical examples using [Pingz](https://pingz.netlify.app) (a real-time IRC-style chat app) and [Playground](https://myles-playground.netlify.app) (a productivity dashboard), highlighting where each BaaS tool fits.
+
+---
+
+## What is BaaS in 2025?
+
+BaaS platforms abstract away the operational overhead of building, scaling, and maintaining your backend. This includes:
+
+- **Data storage and access** (e.g. Supabase, Convex)
+- **Authentication and RBAC** (e.g. Clerk)
+- **File storage** (e.g. upload and retrieve images, PDFs, or media using Supabase Storage or Convex File API)
+- **Real-time subscriptions or sync** (e.g. reactive queries in Convex, live data replication in Supabase, or presence/state updates using tools like Ably or Partykit)
+- **Serverless functions or edge logic** (e.g. Convex mutations, Supabase Edge Functions, or Vercel/Netlify function endpoints)
+
+The goal is to empower frontend developers to build rich, full-stack apps without running their own servers.
+
+Clerk, while technically focused on **auth and identity**, fits into the broader BaaS ecosystem as your **authentication layer**. It pairs naturally with Convex or Supabase, depending on your data and realtime needs.
+
+---
+
+## The Power of Real-Time
+
+In recent years, tools like **Ably**, **Partykit**, and **Convex** have made real-time features far more accessible. These platforms offer powerful, low-latency pub/sub infrastructure on generous free tiers. This means developers can now easily build:
+
+- Collaborative whiteboards
+- Presence-aware UIs
+- Multiplayer games
+- Live dashboards and chats
+
+For example, [Partykit](https://partykit.io) lets you build multiplayer rooms with persistent state and websockets, while **Convex** handles real-time data sync natively with reactive queries. The ability to keep multiple clients in sync across tabs and devices unlocks experiences that used to require complex websockets or polling strategies.
+
+These capabilities aren't just "nice to have" — they're becoming baseline expectations for modern, interactive apps.
+
+---
+
+## Convex: Real-Time Reactive Backend
+
+**Convex** offers a backend that feels more like state management than traditional request/response APIs. Think "hooks for your database".
+
+### Features:
+
+- Strongly typed queries and mutations (auto-generated)
+- Real-time reactive subscriptions out of the box
+- Simple file upload API
+
+### Example: Message Feed
+
+```ts
+// convex/messages.ts
+import { query } from 'convex/server';
+
+export const listMessages = query({
+  args: {},
+  handler: async (ctx) => {
+    return await ctx.db.query('messages').order('desc').take(50);
+  },
+});
+```
+
+On the frontend:
+
+```tsx
+const { data: messages } = useQuery(api.messages.listMessages);
+```
+
+No REST calls, no GraphQL setup. Convex manages real-time updates automatically.
+
+---
+
+## Supabase: SQL-First Developer Platform
+
+**Supabase** offers a Postgres-backed experience, including:
+
+- Row-Level Security
+- Realtime updates via replication
+- Serverless functions
+- Auth and file storage
+
+Great for apps that need relational data or SQL familiarity.
+
+### Example: Fetching Notes
+
+```ts
+const { data, error } = await supabase
+  .from('notes')
+  .select('id, title, body')
+  .order('updated_at', { ascending: false });
+```
+
+Supabase gives you a powerful, SQL-native backend with structured RBAC and dashboards.
+
+---
+
+## Clerk: Drop-in Authentication
+
+**Clerk** handles sign-in, sign-up, session management, and user profiles. It integrates cleanly with both Convex and Supabase.
+
+```tsx
+import { SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
+
+<SignedIn>
+  <Dashboard />
+</SignedIn>
+<SignedOut>
+  <SignInButton />
+</SignedOut>
+```
+
+Clerk also supports:
+
+- OAuth logins
+- Webhooks
+- JWT templates (e.g. for Convex integration)
+
+---
+
+## Dev Setup with Vite + Bun
+
+Here's a quick overview of getting started with a modern React stack:
+
+```bash
+bun create vite my-app --template react-ts
+cd my-app
+bun install
+```
+
+Install your services:
+
+```bash
+bun add @clerk/clerk-react convex supabase
+```
+
+Configure `.env.local`:
+
+```env
+VITE_CLERK_PUBLISHABLE_KEY=your_clerk_key
+VITE_CONVEX_URL=https://your-app.convex.cloud
+VITE_SUPABASE_URL=https://xyz.supabase.co
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+Start local dev:
+
+```bash
+bun dev
+npx convex dev
+```
+
+---
+
+## Deploying to Netlify
+
+### 1. Push to GitHub
+
+Commit your project to a Git repo.
+
+### 2. Connect to Netlify
+
+- Go to [Netlify](https://app.netlify.com/)
+- Click "New site from Git"
+- Choose your repo
+- Set build command: `bun run build`
+- Publish directory: `dist`
+- Add env vars
+
+### 3. Configure Convex + Clerk
+
+- Deploy Convex: `npx convex deploy`
+- Set Clerk production domain + JWT template
+
+Once deployed, your full-stack app is live.
+
+---
+
+## When to Use What
+
+| Use Case                | Best Fit |
+| ----------------------- | -------- |
+| Realtime chat, presence | Convex   |
+| Relational dashboards   | Supabase |
+| Authentication & RBAC   | Clerk    |
+
+Mix and match based on needs. For example:
+
+- Pingz uses Clerk + Convex
+- Playground uses Supabase for persistent state
+
+---
+
+## Conclusion
+
+Modern BaaS tools remove barriers between frontend and backend. By combining **Clerk**, **Convex**, and **Supabase** with **React 19**, **Bun**, and **Vite**, you can ship full-stack applications quickly, confidently, and without infrastructure headaches.
+
+These tools let you focus on _what_ you're building, not _how_ you're wiring up a backend. Whether you're building a dashboard, a multiplayer canvas, or a chat app, the modern stack is finally catching up to the frontend.

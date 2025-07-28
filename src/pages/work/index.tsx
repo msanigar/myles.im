@@ -61,6 +61,18 @@ export default function Index({}: Props) {
 
           <div className="tile is-ancestor">
             <div className="tile is-vertical is-6 is-parent">
+            <article className="tile is-child box notification is-info">
+                <a
+                  target="_blank"
+                  href="https://pingz.netlify.app/"
+                >
+                  <p className="title">Pingz Chat</p>
+                  <p className="subtitle">A raw, real-time, IRC-inspired chat app. Built with React 19, Convex, and Bun.</p>
+                  <figure className="image is-4by3">
+                    <img src="/images/pingz.png" />
+                  </figure>
+                </a>
+              </article>
               <article className="tile is-child box notification is-warning">
                 <a target="_blank" href="https://beadlamtractor.co.uk">
                   <p className="title">Beadlam Tractor Run</p>
@@ -114,7 +126,9 @@ export default function Index({}: Props) {
                   </figure>
                 </a>
               </article>
-              <article className="tile is-child box notification is-danger">
+            </div>
+            <div className="tile is-vertical is-6 is-parent">
+            <article className="tile is-child box notification is-danger">
                 <a
                   target="_blank"
                   href="https://myles-playground.netlify.app/"
@@ -126,8 +140,6 @@ export default function Index({}: Props) {
                   </figure>
                 </a>
               </article>
-            </div>
-            <div className="tile is-vertical is-6 is-parent">
               <article className="tile is-child box notification is-success">
                 <a
                   target="_blank"
@@ -177,18 +189,6 @@ export default function Index({}: Props) {
                   </p>
                   <figure className="image">
                     <img src="/images/redox.png" />
-                  </figure>
-                </a>
-              </article>
-              <article className="tile is-child box notification is-info">
-                <a
-                  target="_blank"
-                  href="https://pingz.netlify.app/"
-                >
-                  <p className="title">Pingz Chat</p>
-                  <p className="subtitle">A raw, real-time, IRC-inspired chat app. Built with React 19, Convex, and Bun.</p>
-                  <figure className="image is-4by3">
-                    <img src="/images/pingz.png" />
                   </figure>
                 </a>
               </article>
