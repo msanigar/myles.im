@@ -185,7 +185,7 @@ export default function Index({}: Props) {
                   target="_blank"
                   href="https://pingz.netlify.app/"
                 >
-                  <p className="title">Pingz</p>
+                  <p className="title">Pingz Chat</p>
                   <p className="subtitle">A raw, real-time, IRC-inspired chat app. Built with React 19, Convex, and Bun.</p>
                   <figure className="image is-4by3">
                     <img src="/images/pingz.png" />
