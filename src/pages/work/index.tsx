@@ -61,13 +61,32 @@ export default function Index({}: Props) {
 
           <div className="tile is-ancestor">
             <div className="tile is-vertical is-6 is-parent">
-            <article className="tile is-child box notification is-info">
+              <article className="tile is-child box notification is-primary">
                 <a
+                  href="https://github.com/msanigar/Encounters"
                   target="_blank"
-                  href="https://pingz.netlify.app/"
                 >
+                  <p className="title">Encounters</p>
+                  <p className="subtitle">
+                    A proof-of-concept demonstrating an Encounter-first
+                    architecture for telehealth applications. This POC showcases
+                    a modern, resilient telehealth platform built with Next.js
+                    14, Convex, and LiveKit.
+                    <br />
+                    <figure className="image is-4by3">
+                      <img src="/images/encounters.png" />
+                    </figure>
+                  </p>
+                </a>
+              </article>
+
+              <article className="tile is-child box notification is-info">
+                <a target="_blank" href="https://pingz.netlify.app/">
                   <p className="title">Pingz Chat</p>
-                  <p className="subtitle">A raw, real-time, IRC-inspired chat app. Built with React 19, Convex, and Bun.</p>
+                  <p className="subtitle">
+                    A raw, real-time, IRC-inspired chat app. Built with React
+                    19, Convex, and Bun.
+                  </p>
                   <figure className="image is-4by3">
                     <img src="/images/pingz.png" />
                   </figure>
@@ -128,13 +147,28 @@ export default function Index({}: Props) {
               </article>
             </div>
             <div className="tile is-vertical is-6 is-parent">
-            <article className="tile is-child box notification is-danger">
-                <a
-                  target="_blank"
-                  href="https://myles-playground.netlify.app/"
-                >
+              <article className="tile is-child box notification is-link">
+                <a target="_blank" href="https://tldrawz.netlify.app/">
+                  <p className="title">Tldrawz</p>
+                  <p className="subtitle">
+                    A minimal, production-ready realtime whiteboard POC built
+                    with Next.js, tldraw, and Cloudflare Workers.
+                  </p>
+                  <figure className="image is-4by3">
+                    <img src="/images/tldrawz.png" />
+                  </figure>
+                </a>
+              </article>
+
+              <article className="tile is-child box notification is-danger">
+                <a target="_blank" href="https://myles-playground.netlify.app/">
                   <p className="title">Myles' Playground</p>
-                  <p className="subtitle">A comprehensive productivity and collaboration application built with React, TypeScript, and modern web technologies. Features real-time collaboration, video calling, task management, focus tools, and more.</p>
+                  <p className="subtitle">
+                    A comprehensive productivity and collaboration application
+                    built with React, TypeScript, and modern web technologies.
+                    Features real-time collaboration, video calling, task
+                    management, focus tools, and more.
+                  </p>
                   <figure className="image">
                     <img src="/images/playground.png" />
                   </figure>
