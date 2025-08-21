@@ -99,11 +99,26 @@ When I front-load my workflow in ChatGPT, I usually end up with one of two style
 ### 1) Conversational Prompt (approachable style)
 
 ```markdown
-Hey. I'm a non-developer at doxy.me looking to build my understanding of web development and play around with AI tooling to generate POCs and ideas for our product. As a Telemedicine product one of the focus areas at the moment is games and interactivity both in and outside of the call experience. Take a look at the attached screenshot of the doxy.me provider dashboard today.
-I want you to help me develop a Prompt for Cursor. We're going to build Connect 4 as a game for doxy.me, and whilst we should build a container that somewhat mimics doxy.me, the main focus should be on the game window itself. Also see attached a mock of how this Connect 4 game might look.
-Doxy.me is built with React JS, TypeScript, MUI & Framer Motion, using a custom component lib. It's powered by NextJS and we should aim to build an app that can be hosted on Netlify and runs as a static web app in the browser. Whilst we use realtime messaging, we can omit that for this POC.
-As a non-developer I want Cursor to take care of bootstrapping all of the dependencies, configuration and technology choices within the constraints and parameters that we outline here, it should take care of building and running the app locally, and when ready, should deploy via netlify-cli with a netlify.toml file.
-The POC should be launched from the dashboard of the web app we create, and all game rules of Connect 4 should apply; i.e., one player (the provider or patient) takes the first turn, selects a column, and a blue or red chip (a colour to represent each player) should be placed at the lowest available point on the grid, for that column. Players should take it in turns until a winning condition is met, or there's a draw. Once the game concludes there should be a reset button and the game state should start over. Again, this is a POC which does not need to be powered by actual realtime messaging, a single client is OK for the purposes of the POC and everything should be developed with static asset deployment in mind.
+Hey. I'm a non-developer at doxy.me looking to build my understanding of web development and play around with AI tooling to
+generate POCs and ideas for our product.
+As a Telemedicine product one of the focus areas at the moment is games and interactivity both in and outside of the call experience.
+Take a look at the attached screenshot of the doxy.me provider dashboard today.
+I want you to help me develop a Prompt for Cursor. We're going to build Connect 4 as a game for doxy.me, and whilst we should build a
+container that somewhat mimics doxy.me, the main focus should be on the game window itself.
+Also see attached a mock of how this Connect 4 game might look.
+Doxy.me is built with React JS, TypeScript, MUI & Framer Motion, using a custom component lib. It's powered by NextJS and we should aim to build
+an app that can be hosted on Netlify and runs as a static web app in the browser.
+Whilst we use realtime messaging, we can omit that for this POC.
+As a non-developer I want Cursor to take care of bootstrapping all of the dependencies, configuration and technology choices within
+the constraints and parameters that we outline here,
+it should take care of building and running the app locally, and when ready, should deploy via netlify-cli with a netlify.toml file.
+The POC should be launched from the dashboard of the web app we create, and all game rules of Connect 4 should apply; i.e., one player
+(the provider or patient) takes the first turn, selects a column, and a blue or red chip
+(a colour to represent each player) should be placed at the lowest available point on the grid, for that column.
+Players should take it in turns until a winning condition is met, or there's a draw.
+Once the game concludes there should be a reset button and the game state should start over.
+Again, this is a POC which does not need to be powered by actual realtime messaging,
+a single client is OK for the purposes of the POC and everything should be developed with static asset deployment in mind.
 ```
 
 ### 2) Structured Prompt (ready-to-execute style)
@@ -113,7 +128,8 @@ The POC should be launched from the dashboard of the web app we create, and all 
 
 ## Goal
 
-Build a single-client Connect Four game POC inside a dashboard shell mimicking the doxy.me provider dashboard. Focus on the game window. Deploy as a static site on Netlify.
+Build a single-client Connect Four game POC inside a dashboard shell mimicking the doxy.me provider dashboard.
+Focus on the game window. Deploy as a static site on Netlify.
 
 ## Stack
 
