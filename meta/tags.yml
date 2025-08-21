@@ -15,3 +15,15 @@ tags:
     name: BaaS
   - slug: clerk
     name: Clerk
+  - slug: chatgpt
+    name: ChatGPT
+  - slug: cursor
+    name: Cursor
+  - slug: mui
+    name: MUI
+  - slug: framer-motion
+    name: Framer Motion
+  - slug: prototyping
+    name: Prototyping
+  - slug: workflows
+    name: Workflows

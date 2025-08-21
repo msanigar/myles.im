@@ -1,0 +1,168 @@
+---
+slug: chatgpt-cursor-netlify-workflow
+title: From Idea to Live App in an Afternoon — ChatGPT, Cursor & Netlify
+date: 2025-08-21
+author: myles
+tags:
+  - chatgpt
+  - cursor
+  - netlify
+  - react
+  - nextjs
+  - mui
+  - framer-motion
+  - prototyping
+  - workflows
+thumbnail: https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/netlify.svg
+shortText: The front-loaded prompting workflow I use to turn ideas into live web apps fast — with ChatGPT as architect, Cursor as builder, and Netlify as publisher.
+---
+
+## Introduction: Why This Workflow?
+
+As an engineering manager, I’ve been experimenting with ways to prototype quickly without getting bogged down in boilerplate. Over time, I’ve developed a repeatable workflow that has surprised a lot of my non-engineer colleagues: in a single afternoon we can go from _“I’ve got an idea”_ to _“here’s a working, shareable web app.”_
+
+The trick is in how I split the work: I use **ChatGPT as the thinking partner and architect**, **Cursor as the builder**, and **Netlify as the publisher**. Instead of tinkering inside the IDE, I front-load all the context and iteration into ChatGPT. Once I’ve got a coherent, end-to-end spec, I hand it off to Cursor in one clean prompt — which saves huge amounts of time and tedium.
+
+## The Tools in the Toolbox
+
+- **ChatGPT** — where the heavy lifting happens: I describe ideas, share screenshots, discuss component libraries, and iterate until we have a clear, structured plan.
+- **Cursor** — the AI-native IDE that takes my polished prompt and generates a scaffolded project that mostly “just works.”
+- **Netlify** — a frictionless way to deploy the app live so colleagues can interact with it instantly.
+
+> _Note:_ I’ll often provide screenshots and explicit component-library choices during the ChatGPT phase so the “hand-off” is concrete.
+
+## Step 1: Flesh Out the Idea with ChatGPT
+
+Everything starts with a conversation. Let’s say I want to prototype a lightweight **game as a doxy.me extension**. Instead of dumping half-baked ideas into Cursor and playing tug-of-war, I sit down with ChatGPT and fully describe the task:
+
+- **What the app should do** (game rules, mechanics, user flow).
+- **How it should look** (screenshots, design inspiration, component library choices).
+- **What stack I want to use** (React, TypeScript, MUI, Framer Motion, Next.js).
+- **Where it will run** (inside a doxy.me extension, deployed to Netlify).
+
+ChatGPT shines at mapping out “A → B → C,” pointing out missing pieces, and structuring the project coherently. By the end of this phase, I have a single, refined prompt that looks more like a mini design doc than a vague request.
+
+## Step 2: Generate a Coherent Prompt
+
+That final prompt is the magic hand-off. It usually includes:
+
+- A project description (e.g., “Build a React + Next.js app that does X”).
+- Technical requirements (state management, routing, deployment notes).
+- UI considerations (component library, dark mode, animations).
+- Extra touches (localStorage persistence, async transitions, etc).
+
+The more context I front-load, the smoother the build stage goes. Cursor doesn’t need to guess — it just executes.
+
+## Step 3: Hand Off to Cursor
+
+I paste the full prompt into Cursor and let it scaffold the app. Instead of wrestling through early missteps, I get a structured codebase immediately: entry points wired up, components in place, and usually most of the logic ready to test.
+
+Cursor is excellent here, because it can auto-fix imports, adjust configs, and handle package installation. My role becomes more like QA than babysitter.
+
+## Step 4: Test & Debug Locally
+
+Running the app locally is usually smooth, but there are always small bumps. This is where I switch back to ChatGPT (or Cursor’s AI) for targeted help:
+
+- Fix a stray TypeScript error.
+- Adjust a layout quirk in MUI/Tailwind.
+- Add a missing dependency.
+
+Because the foundation was designed up-front, these fixes are minor — not wholesale rewrites.
+
+## Step 5: Deploy to Netlify
+
+Once it runs locally, deployment is the easy part:
+
+1. Push the code to GitHub.
+2. Connect the repo to Netlify.
+3. Wait a minute or two, and get a live link to share.
+
+This step is always the most exciting for non-engineer colleagues: they see their idea running live on the web, not in a terminal window.
+
+## Lessons Learned
+
+1. **Front-loading context saves time.** ChatGPT is better at reasoning through the “what and why” than Cursor.
+2. **Cursor is a builder, not a thinker.** Once it has a clear brief, it excels at execution.
+3. **The human role is lighter.** Instead of nudging line-by-line, I invest effort in shaping the idea up front.
+4. **Component libraries and screenshots matter.** The more tangible input I give ChatGPT, the better the output.
+
+## Why This Matters
+
+- **For non-engineers:** lowers the barrier to creating something real. You don’t need to know JavaScript — just describe what you want clearly.
+- **For engineers:** a way to skip tedious scaffolding and focus on the fun parts.
+- **For teams:** encourages rapid experimentation and shared ownership of ideas.
+
+## Appendix: Example Prompts for Cursor
+
+When I front-load my workflow in ChatGPT, I usually end up with one of two styles of hand-off. Both work — choose whatever’s easier for your collaborators.
+
+### 1) Conversational Prompt (approachable style)
+
+```markdown
+Hey. I'm a non-developer at doxy.me looking to build my understanding of web development and play around with AI tooling to generate POCs and ideas for our product. As a Telemedicine product one of the focus areas at the moment is games and interactivity both in and outside of the call experience. Take a look at the attached screenshot of the doxy.me provider dashboard today.
+I want you to help me develop a Prompt for Cursor. We're going to build Connect 4 as a game for doxy.me, and whilst we should build a container that somewhat mimics doxy.me, the main focus should be on the game window itself. Also see attached a mock of how this Connect 4 game might look.
+Doxy.me is built with React JS, TypeScript, MUI & Framer Motion, using a custom component lib. It's powered by NextJS and we should aim to build an app that can be hosted on Netlify and runs as a static web app in the browser. Whilst we use realtime messaging, we can omit that for this POC.
+As a non-developer I want Cursor to take care of bootstrapping all of the dependencies, configuration and technology choices within the constraints and parameters that we outline here, it should take care of building and running the app locally, and when ready, should deploy via netlify-cli with a netlify.toml file.
+The POC should be launched from the dashboard of the web app we create, and all game rules of Connect 4 should apply; i.e., one player (the provider or patient) takes the first turn, selects a column, and a blue or red chip (a colour to represent each player) should be placed at the lowest available point on the grid, for that column. Players should take it in turns until a winning condition is met, or there's a draw. Once the game concludes there should be a reset button and the game state should start over. Again, this is a POC which does not need to be powered by actual realtime messaging, a single client is OK for the purposes of the POC and everything should be developed with static asset deployment in mind.
+```
+
+### 2) Structured Prompt (ready-to-execute style)
+
+```markdown
+# Cursor Prompt — Connect Four POC for doxy.me
+
+## Goal
+
+Build a single-client Connect Four game POC inside a dashboard shell mimicking the doxy.me provider dashboard. Focus on the game window. Deploy as a static site on Netlify.
+
+## Stack
+
+- Next.js 14 (App Router) + TypeScript
+- React, MUI, Framer Motion
+- Netlify CLI for static hosting (`netlify.toml` included)
+
+## Features
+
+- Dashboard shell: left nav, header, empty waiting room placeholder, “Launch Connect Four” button.
+- Connect Four: 7×6 grid, Red vs Blue players, alternating turns.
+- Chip drop animation, win/draw detection, reset button.
+- Status bar for player turn/result.
+- Dark theme via MUI + Framer Motion animations.
+
+## Game Logic
+
+- Pure helpers in `/lib/game.ts`:
+  - `createBoard()`, `dropDisc()`, `checkWin()`, `isDraw()`.
+- Detect horizontal, vertical, diagonal wins.
+- Highlight winning streak with animation.
+
+## File Structure
+
+/app
+/layout.tsx
+/page.tsx
+/connect-four/page.tsx
+/components
+Nav.tsx, Header.tsx, GameBoard.tsx, GameCell.tsx
+/lib
+game.ts
+/styles
+theme.ts
+next.config.js
+netlify.toml
+README.md
+
+## Deployment
+
+- `next.config.js` → `output: 'export'`
+- `netlify.toml` → publish `out/`
+- Scripts: `dev`, `build`, `export`, `start`, `deploy`
+```
+
+## Closing Thoughts
+
+This workflow has turned into a kind of superpower. Two colleagues with no coding background have now prototyped apps this way, just by sitting with me and feeding context into ChatGPT.
+
+The lesson? The more effort you put into **front-loading your prompt**, the smoother everything else becomes. Cursor builds, Netlify publishes, and you’re left with a working prototype in hours — not days.
+
+If you’ve ever thought _“I have an idea, but I’m not technical enough”_, I’d encourage you to try this workflow. With the right process, the gap between idea and reality is smaller than you think.
