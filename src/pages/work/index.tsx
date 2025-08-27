@@ -133,18 +133,7 @@ export default function Index({}: Props) {
                   </p>
                 </a>
               </article>
-              <article className="tile is-child box notification is-info">
-                <a
-                  target="_blank"
-                  href="https://animated-starburst-957819.netlify.app/"
-                >
-                  <p className="title">HypeBeast (WIP)</p>
-                  <p className="subtitle">Fake sneaker ecom store</p>
-                  <figure className="image is-4by3">
-                    <img src="/images/hypebeast.png" />
-                  </figure>
-                </a>
-              </article>
+              
               <article className="tile is-child box notification is-success">
                 <a
                   target="_blank"
@@ -231,6 +220,20 @@ export default function Index({}: Props) {
                   </figure>
                 </a>
               </article>
+
+              <article className="tile is-child box notification is-info">
+                <a
+                  target="_blank"
+                  href="https://animated-starburst-957819.netlify.app/"
+                >
+                  <p className="title">HypeBeast (WIP)</p>
+                  <p className="subtitle">Fake sneaker ecom store</p>
+                  <figure className="image is-4by3">
+                    <img src="/images/hypebeast.png" />
+                  </figure>
+                </a>
+              </article>
+
               <article className="tile is-child box notification is-warning">
                 <a target="_blank" href="https://rust-redox.co.uk/">
                   <p className="title">Rust-Redox</p>
