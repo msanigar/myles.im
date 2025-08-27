@@ -61,6 +61,22 @@ export default function Index({}: Props) {
 
           <div className="tile is-ancestor">
             <div className="tile is-vertical is-6 is-parent">
+
+            <article className="tile is-child box notification is-success">
+                <a
+                  target="_blank"
+                  href="https://alignuk.netlify.app/"
+                >
+                  <p className="title">AlignUK</p>
+                  <p className="subtitle">
+                  A neutral, evidence-based political alignment app that places users on multiple axes (not just left–right), inspired by Vote Compass–style tools.
+                  </p>
+                  <figure className="image">
+                    <img src="/images/alignuk.png" />
+                  </figure>
+                </a>
+              </article>
+
               <article className="tile is-child box notification is-primary">
                 <a
                   href="https://github.com/msanigar/Encounters"
