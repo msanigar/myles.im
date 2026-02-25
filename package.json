@@ -9,6 +9,7 @@
     "cloudinary": "node cloudinary",
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "if [ -d .next/server/pages ]; then mkdir -p .next/serverless && rm -rf .next/serverless/pages && cp -R .next/server/pages .next/serverless/pages; fi",
     "start": "next start"
   },
   "dependencies": {
