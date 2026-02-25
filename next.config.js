@@ -1,7 +1,6 @@
 module.exports = {
   pageExtensions: ['tsx'],
   output: 'export',
-  distDir: 'out',
   images: {
     path: 'https://res.cloudinary.com/dgsslqupd/image/upload/',
     loader: 'cloudinary',
