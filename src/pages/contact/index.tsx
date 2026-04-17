@@ -24,9 +24,17 @@ export default function Index({}: Props) {
               </h2>
             </section>
             <Form />
-            <Link className="has-text-danger" href="/freelance">
-              Want to hire me? let's chat!
-            </Link>
+            <div
+              style={{
+                marginTop: '1.5rem',
+                marginBottom: '3rem',
+                textAlign: 'center',
+              }}
+            >
+              <Link className="button is-danger is-light is-medium" href="/freelance">
+                Want to hire me? Let's chat!
+              </Link>
+            </div>
           </div>
         </div>
       </div>
